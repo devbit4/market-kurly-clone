@@ -1,9 +1,15 @@
+import { Outlet } from 'react-router-dom';
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
+
 function App() {
 	return (
 		<>
-			<header>header</header>
-			<main>-- 컨텐츠 --</main>
-			<footer>footer</footer>
+			<Header />
+			<main>
+				<Outlet />
+			</main>
+			<Footer />
 		</>
 	);
 }
