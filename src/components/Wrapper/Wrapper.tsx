@@ -1,7 +1,11 @@
 import styles from './Wrapper.module.css';
 
-const Wrapper = () => {
-	return <div className={styles.wrapper}>wrapper</div>;
+interface Wrapper {
+	children: React.ReactNode;
+}
+
+const Wrapper = ({ children }: Wrapper) => {
+	return <div className={styles.wrapper}>{children}</div>;
 };
 
 export default Wrapper;
