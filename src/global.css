@@ -26,3 +26,13 @@ button {
 body {
 	font-family: 'Noto Sans KR', sans-serif;
 }
+
+.sr_only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	font-size: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+}
