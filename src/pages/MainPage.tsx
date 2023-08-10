@@ -1,11 +1,87 @@
+import { useEffect, useState, useMemo } from 'react';
+import axios from 'axios';
+
 import Wrapper from '@/components/Wrapper/Wrapper';
+import MainSwiper from '@/components/MainSwiper/MainSwiper';
+
+import ProductList from '@/components/Product/ProductList';
+import Promotion from '@/components/Product/Promotion';
+import Banner from '@/components/Product/Banner';
+import Category from '@/components/Product/Category';
+
+export type ProductType = {
+	no: number;
+	name: string;
+	discount_rate: number;
+	sales_price: number;
+	discounted_price: number;
+	review_count: string;
+	list_image_url: string;
+	category: number;
+};
+
+export type BannerType = {
+	image_url: string;
+};
 
 const MainPage = () => {
+	const [products, setProducts] = useState<ProductType[]>([]);
+	const [promotions, setPromotions] = useState<ProductType[]>([]);
+	const [banners, setBanners] = useState();
+	const [selectedCategory, setSelectedCategory] = useState(100);
+	const [categories, setCategories] = useState<ProductType[]>([]);
+
+	const selectedProducts = useMemo(() => {
+		return categories?.filter(item => item.category === selectedCategory);
+	}, [categories, selectedCategory]);
+
+	useEffect(() => {
+		axios.get(`/dbs/todayRecommend.json`).then(data => {
+			setProducts(data.data.products);
+		});
+	}, []);
+
+	useEffect(() => {
+		axios.get(`/dbs/specialDeal.json`).then(data => {
+			setPromotions(data.data.products);
+		});
+	}, []);
+
+	useEffect(() => {
+		axios.get(`/dbs/mainBanner.json`).then(data => {
+			setBanners(data.data.products);
+		});
+	}, []);
+
+	useEffect(() => {
+		axios.get(`/dbs/category.json`).then(data => {
+			setCategories(data.data.products);
+		});
+	}, []);
+
+	if (!banners) return <></>;
 	return (
-		<>
-			<div>캐러셀</div>
-			<Wrapper>상품리스트</Wrapper>
-		</>
+		<div>
+			<MainSwiper />
+			<Wrapper>
+				{/* 오늘의 추천 상품 */}
+				<ProductList title={'이 상품 어때요?'} products={products} />
+
+				{/* 프로모션 상품 */}
+				<Promotion promotions={promotions} />
+
+				{/* 배너 */}
+				<Banner banner={banners[0]} />
+
+				{/* 카테고리별 상품 */}
+				<Category setSelectedCategory={setSelectedCategory} />
+
+				<ProductList products={selectedProducts} />
+
+				{/* 배너2 */}
+				<Banner banner={banners[3]} />
+			</Wrapper>
+		</div>
 	);
 };
 
