@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+import Wrapper from '@components/Wrapper/Wrapper';
 import Logo from '@components/Logo/Logo';
 import SearchInput from '@components/SearchInput/SearchInput';
 import HeaderIcon from '@components/Header/HeaderIcon';
@@ -7,7 +8,6 @@ import HeaderCategories from '@components/Header/HeaderCategories';
 
 import { mainRoutes, themeRoutes, userRoutes } from './header-routes';
 import styles from './Header.module.css';
-import Wrapper from '../Wrapper/Wrapper';
 
 const Header = () => {
 	const handleFavoriteBtn = () => {};
