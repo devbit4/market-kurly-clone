@@ -1,0 +1,123 @@
+{
+	"products": [
+		{
+			"no": 1000045198,
+			"name": "[하이포크] 한돈 급냉 삼겹살 500g",
+			"short_description": "100g 당 판매가: 2,142원",
+			"list_image_url": "https://product-image.kurly.com/product/image/95a33a48-a620-447e-b597-7cbe875dbded.jpg",
+			"sales_price": 15300,
+			"discounted_price": 10710,
+			"discount_rate": 30,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Sold Out",
+			"sold_out_text": "다음 일일특가를 기대하세요!",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [],
+			"sticker": {
+				"content": [
+					{
+						"text": "일일특가",
+						"weight": "bold"
+					}
+				],
+				"opacity": 90,
+				"background_color": "#BD76FF"
+			},
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "999+"
+		},
+		{
+			"no": 5081259,
+			"name": "썸머킹 사과 1.3kg (4~8입)",
+			"short_description": "여름에 만나는 풋풋한 매력",
+			"list_image_url": "https://img-cf.kurly.com/shop/data/goods/1626252109651l0.jpg",
+			"sales_price": 12900,
+			"discounted_price": 8900,
+			"discount_rate": 31,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Sold Out",
+			"sold_out_text": "다음 일일특가를 기대하세요!",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [
+				{
+					"name": "희소가치 프로젝트",
+					"type": "DEFAULT"
+				}
+			],
+			"sticker": {
+				"content": [
+					{
+						"text": "일일특가",
+						"weight": "bold"
+					}
+				],
+				"opacity": 90,
+				"background_color": "#BD76FF"
+			},
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "999+"
+		},
+		{
+			"no": 1000014594,
+			"name": "[엘라스틴] 오가니스트 비건 샴푸&컨디셔너 500ml 5종",
+			"short_description": "온 가족과 부담 없이 사용하는",
+			"list_image_url": "https://product-image.kurly.com/product/image/c519a725-3a8f-4051-aff3-33741938d185.jpg",
+			"sales_price": 16900,
+			"discounted_price": 4950,
+			"discount_rate": 70,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Sold Out",
+			"sold_out_text": "다음 일일특가를 기대하세요!",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [],
+			"sticker": {
+				"content": [
+					{
+						"text": "일일특가",
+						"weight": "bold"
+					}
+				],
+				"opacity": 90,
+				"background_color": "#BD76FF"
+			},
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "706"
+		}
+	]
+}
