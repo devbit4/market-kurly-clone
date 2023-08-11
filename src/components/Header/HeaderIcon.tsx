@@ -1,12 +1,11 @@
 interface HeaderIcon {
 	name: string;
 	className: string;
-	onMouseEnter?: React.MouseEventHandler<HTMLDivElement>;
 }
 
-const HeaderIcon = ({ name, className, onMouseEnter }: HeaderIcon) => {
+const HeaderIcon = ({ name, className }: HeaderIcon) => {
 	return (
-		<div className={className} onMouseEnter={onMouseEnter}>
+		<div className={className}>
 			<span className='sr_only'>{name}</span>
 		</div>
 	);
