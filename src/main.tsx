@@ -6,6 +6,7 @@ import SearchPage from '@pages/SearchPage';
 import MainPage from '@pages/MainPage';
 
 import './global.css';
+import ModalsProvider from './context/ModalsContext';
 
 const router = createBrowserRouter([
 	{
@@ -24,4 +25,8 @@ const router = createBrowserRouter([
 	},
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<RouterProvider router={router} />);
+ReactDOM.createRoot(document.getElementById('root')!).render(
+	<ModalsProvider>
+		<RouterProvider router={router} />
+	</ModalsProvider>
+);

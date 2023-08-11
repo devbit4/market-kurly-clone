@@ -9,8 +9,8 @@ export default function useModals() {
 		open(Component, props);
 	};
 
-	const closeModal = Component => {
-		close(Component);
+	const closeModal = id => {
+		close(id);
 	};
 
 	return {

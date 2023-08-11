@@ -7,16 +7,22 @@ type Props = {
 	children: React.ReactNode;
 	onClose: () => void;
 	onSubmit: () => void;
+	id: string;
 };
 
-const Modal = ({ children, onClose, onSubmit }: Props) => {
+const Modal = ({ children, onClose, onSubmit, id }: Props) => {
 	const modalRef = useRef(null);
 
+	window.console.log(id);
 	const handleClose = useCallback(() => {
-		onClose && onClose();
+		onClose && onClose(id);
 	}, [onClose]);
 
-	useOutSideClick(modalRef, handleClose);
+	const handleSubmit = useCallback(() => {
+		onSubmit && onSubmit();
+	}, [onSubmit]);
+
+	// useOutSideClick(modalRef, handleClose);
 
 	return (
 		<ModalContainer>
@@ -25,7 +31,8 @@ const Modal = ({ children, onClose, onSubmit }: Props) => {
 					<div className={styles.closeButton} onClick={handleClose}>
 						닫기
 					</div>
-					<div className={styles.closeButton} onClick={onSubmit}>
+
+					<div className={styles.closeButton} onClick={handleSubmit}>
 						제출
 					</div>
 

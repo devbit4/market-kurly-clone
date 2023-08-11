@@ -7,22 +7,29 @@ const Modals = () => {
 	const { close } = useContext(ModalsDispatchContext);
 
 	return openedModals.map((modal, index) => {
-		const { Component, props } = modal;
+		const { Component, props, id } = modal;
 
 		const { onSubmit, ...restProps } = props;
 
 		const onClose = () => {
-			close(Component);
+			close(id);
 		};
 
 		const handleSubmit = async () => {
 			if (typeof onSubmit === 'function') {
 				await onSubmit();
 			}
+			close(id);
 		};
 
 		return (
-			<Component {...restProps} key={index} onClose={onClose} onSubmit={handleSubmit}></Component>
+			<Component
+				{...restProps}
+				key={index}
+				onClose={onClose}
+				onSubmit={handleSubmit}
+				id={id}
+			></Component>
 		);
 	});
 };

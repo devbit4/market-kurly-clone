@@ -8,6 +8,8 @@ import ProductList from '@/components/Product/ProductList';
 import Promotion from '@/components/Product/Promotion';
 import Banner from '@/components/Product/Banner';
 import Category from '@/components/Product/Category';
+import useModals from '@/hooks/useModals';
+import Modal from '@/components/Modal/Modal';
 
 export type ProductType = {
 	no: number;
@@ -59,9 +61,44 @@ const MainPage = () => {
 		});
 	}, []);
 
+	const { openModal } = useModals();
+
+	useEffect(() => {
+		openModal(Modal, {
+			children: 'ss',
+			onSubmit: () => {
+				window.console.log('비즈니스 로직 처리');
+				openModal(Modal, {
+					children: 'a',
+					onsubmit: () => {
+						window.console.log('비즈니스 로dd직 처리');
+					},
+				});
+			},
+		});
+	}, []);
+
 	if (!banners) return <></>;
 	return (
 		<div>
+			{/* <button
+				onClick={() => {
+					openModal(Modal, {
+						children: 'ss',
+						onSubmit: () => {
+							window.console.log('비즈니스 로직 처리');
+							openModal(Modal, {
+								children: 'a',
+								onsubmit: () => {
+									window.console.log('비즈니스 로dd직 처리');
+								},
+							});
+						},
+					});
+				}}
+			>
+				버튼
+			</button> */}
 			<MainSwiper />
 			<Wrapper>
 				{/* 오늘의 추천 상품 */}
