@@ -66,14 +66,14 @@ const Header = () => {
 				</section>
 				<section className={styles.header_bottom}>
 					<HeaderCategories />
-					<ul>
+					<ul className={styles.route_themes}>
 						{themeRoutes.map(themeRoute => (
 							<li key={themeRoute.name}>
 								<Link to={themeRoute.link}>{themeRoute.name}</Link>
 							</li>
 						))}
 					</ul>
-					<strong>
+					<strong className={styles.route_notice_delivery}>
 						<Link to='/'>
 							<span className={styles.purple}>샛별·택배</span> 배송안내
 						</Link>
@@ -85,7 +85,7 @@ const Header = () => {
 							<li key={userRoute.name}>
 								<Link to={userRoute.link}>{userRoute.name}</Link>
 								{userRoute.subRoutes && (
-									<ul>
+									<ul className={styles.header_aside_sub}>
 										{userRoute.subRoutes.map(userSubRoute => (
 											<li key={userSubRoute.name}>
 												<Link to={userSubRoute.link}>{userSubRoute.name}</Link>
