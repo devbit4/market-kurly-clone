@@ -22,14 +22,22 @@ const HeaderCategories = () => {
 						<span className={styles.route_main_label}>
 							<Link to={categoryRoute.main_category.link}>{categoryRoute.main_category.name}</Link>
 						</span>
-						<ul className={getClassName(styles.route_sub)}>
-							{categoryRoute.sub_category.length > 0 &&
-								categoryRoute.sub_category.map((subCategoryRoute, index) => (
+						{categoryRoute.sub_category.length > 0 && (
+							<ul
+								className={getClassName(
+									categoryRoute.has_image ? styles.route_recommended : styles.route_sub
+								)}
+							>
+								{categoryRoute.sub_category.map((subCategoryRoute, index) => (
 									<li key={index}>
-										<Link to={subCategoryRoute.link}>{subCategoryRoute.name}</Link>
+										<Link to={subCategoryRoute.link}>
+											{'image' in subCategoryRoute && <img src={subCategoryRoute.image} alt='' />}
+											<span>{subCategoryRoute.name}</span>
+										</Link>
 									</li>
 								))}
-						</ul>
+							</ul>
+						)}
 					</li>
 				))}
 			</ul>

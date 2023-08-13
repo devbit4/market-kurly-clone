@@ -67,7 +67,8 @@
 	font-weight: 500;
 }
 
-.route_main > li:hover > .route_sub {
+.route_main > li:hover > .route_sub,
+.route_main > li:hover > .route_recommended {
 	opacity: 1;
 	pointer-events: initial;
 }
@@ -180,7 +181,8 @@
 
 /* SUB CATEGORY */
 
-.route_sub {
+.route_sub,
+.route_recommended {
 	position: absolute;
 	top: -1px;
 	left: 246px;
@@ -231,4 +233,40 @@
 	height: 1.5px;
 	background-color: #5f0080;
 	content: '';
+}
+
+/* SUB CATEGORY : 컬리의추천 */
+.route_recommended {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 20px 0 0 20px;
+	overflow-y: hidden;
+}
+
+.route_recommended.active {
+	width: 535px;
+}
+
+.route_recommended li {
+	color: #333;
+	font-weight: 400;
+	margin-right: 10px;
+}
+
+.route_recommended img {
+	display: block;
+	width: 116px;
+	height: 88px;
+	margin-bottom: 8px;
+}
+
+.route_recommended span {
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.route_recommended a:hover span {
+	font-weight: 500;
+	color: #5f0080;
+	text-decoration: underline;
 }

@@ -18,6 +18,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	height: 100px;
 	padding-top: 36px;
 }
 
@@ -235,7 +236,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 55px;
+	height: 56px;
 }
 
 .route_themes {

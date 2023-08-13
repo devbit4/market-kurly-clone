@@ -75,7 +75,7 @@ const Header = () => {
 					</ul>
 					<strong className={styles.route_notice_delivery}>
 						<Link to='/'>
-							<span className={styles.purple}>샛별·택배</span> 배송안내
+							<span className={styles.purple}>샛별 · 택배</span> 배송안내
 						</Link>
 					</strong>
 				</section>
