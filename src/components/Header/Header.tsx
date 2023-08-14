@@ -8,14 +8,33 @@ import HeaderCategories from '@components/Header/HeaderCategories';
 
 import { mainRoutes, themeRoutes, userRoutes } from './header-routes';
 import styles from './Header.module.css';
+import { useEffect, useState } from 'react';
 
 const Header = () => {
+	const [isScrolledDown, setIsScrolledDown] = useState(false);
+
+	useEffect(() => {
+		const handleHeaderStyle = () => {
+			if (scrollY > 110 && isScrolledDown) return;
+			if (scrollY > 110) {
+				setIsScrolledDown(true);
+			} else {
+				setIsScrolledDown(false);
+			}
+		};
+
+		handleHeaderStyle();
+		window.addEventListener('scroll', handleHeaderStyle);
+
+		return () => window.removeEventListener('scroll', handleHeaderStyle);
+	}, [isScrolledDown]);
+
 	const handleFavoriteBtn = () => {};
 
 	const handleCartBtn = () => {};
 
 	return (
-		<header className={styles.header}>
+		<header className={`${styles.header} ${isScrolledDown ? styles.active : ''}`}>
 			<Wrapper>
 				<section className={styles.header_top}>
 					<div className={styles.markets}>
@@ -33,7 +52,7 @@ const Header = () => {
 							))}
 						</ul>
 					</div>
-					<SearchInput />
+					<SearchInput isScrolled={isScrolledDown} />
 					<div className={styles.user_info}>
 						<ul>
 							<li className={styles.btn_address}>
@@ -71,7 +90,7 @@ const Header = () => {
 					</div>
 				</section>
 				<section className={styles.header_bottom}>
-					<HeaderCategories />
+					<HeaderCategories isScrolled={isScrolledDown} />
 					<ul className={styles.route_themes}>
 						{themeRoutes.map(themeRoute => (
 							<li key={themeRoute.name}>
