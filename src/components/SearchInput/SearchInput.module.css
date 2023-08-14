@@ -1,4 +1,5 @@
 .search {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -20,6 +21,18 @@
 	background-color: transparent;
 }
 
+.btn_reset {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 16px;
+	height: 16px;
+	right: 47px;
+	margin-left: 20px;
+	background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGNpcmNsZSBmaWxsPSIjOTk5IiBvcGFjaXR5PSIuNSIgY3g9IjgiIGN5PSI4IiByPSI4Ii8+CiAgICAgICAgPGcgc3Ryb2tlPSIjRkZGIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41Ij4KICAgICAgICAgICAgPHBhdGggZD0ibTEwLjg5NyAxMC43ODYtNS43Ny01Ljc2OU01LjEyMiAxMC43ODVsNS43NzUtNS43NzUiLz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo=')
+		0% 0% / 16px 16px no-repeat transparent;
+}
+
 .btn_search {
 	width: 60px;
 	height: 100%;
@@ -38,6 +51,12 @@
 .search.active .input_search {
 	width: calc(100% - 40px);
 	font-size: 12px;
+}
+
+.search.active .btn_reset {
+	right: 35px;
+	top: 20px;
+	background-size: 12px 12px;
 }
 
 .search.active .btn_search {
