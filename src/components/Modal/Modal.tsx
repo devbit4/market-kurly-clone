@@ -2,6 +2,7 @@
 import { useCallback, useRef } from 'react';
 import styles from './Modal.module.css';
 import ModalContainer from './ModalContainer';
+import Overlay from '@components/Overlay/Overlay';
 
 type Props = {
 	children: React.ReactNode;
@@ -25,7 +26,7 @@ const Modal = ({ children, onClose, onSubmit, id }: Props) => {
 
 	return (
 		<ModalContainer>
-			<div className={styles.overlay}>
+			<Overlay>
 				<div className={styles.modalWrap} ref={modalRef}>
 					<div className={styles.closeButton} onClick={handleClose}>
 						닫기
@@ -39,7 +40,7 @@ const Modal = ({ children, onClose, onSubmit, id }: Props) => {
 						<h1> {children}</h1>
 					</div>
 				</div>
-			</div>
+			</Overlay>
 		</ModalContainer>
 	);
 };

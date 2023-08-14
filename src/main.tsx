@@ -7,6 +7,8 @@ import MainPage from '@pages/MainPage';
 
 import './global.css';
 import ModalsProvider from './context/ModalsContext';
+import UserPage from './pages/UserPage';
+import LoginPage from './pages/LoginPage';
 
 const router = createBrowserRouter([
 	{
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
 			{
 				path: 'search',
 				element: <SearchPage />,
+			},
+			{
+				path: 'mypage/*',
+				element: <UserPage />,
+			},
+			{
+				path: 'login',
+				element: <LoginPage />,
 			},
 		],
 	},
