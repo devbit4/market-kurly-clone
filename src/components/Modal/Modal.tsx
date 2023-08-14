@@ -1,22 +1,21 @@
-import useOutSideClick from '@/hooks/useOutsideClick';
+// import useOutSideClick from '@/hooks/useOutsideClick';
 import { useCallback, useRef } from 'react';
 import styles from './Modal.module.css';
 import ModalContainer from './ModalContainer';
 
 type Props = {
 	children: React.ReactNode;
-	onClose: () => void;
-	onSubmit: () => void;
 	id: string;
+	onClose: (id: string) => void;
+	onSubmit: () => void;
 };
 
 const Modal = ({ children, onClose, onSubmit, id }: Props) => {
 	const modalRef = useRef(null);
 
-	window.console.log(id);
 	const handleClose = useCallback(() => {
 		onClose && onClose(id);
-	}, [onClose]);
+	}, [onClose, id]);
 
 	const handleSubmit = useCallback(() => {
 		onSubmit && onSubmit();

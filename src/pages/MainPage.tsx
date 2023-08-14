@@ -66,39 +66,21 @@ const MainPage = () => {
 	useEffect(() => {
 		openModal(Modal, {
 			children: 'ss',
-			onSubmit: () => {
-				window.console.log('비즈니스 로직 처리');
-				openModal(Modal, {
-					children: 'a',
-					onsubmit: () => {
-						window.console.log('비즈니스 로dd직 처리');
-					},
-				});
-			},
+			// onSubmit: () => {
+			// 	window.console.log('비즈니스 로직 처리');
+			// 	openModal(Modal, {
+			// 		children: 'a',
+			// 		onsubmit: () => {
+			// 			window.console.log('비즈니스 로dd직 처리');
+			// 		},
+			// 	});
+			// },
 		});
-	}, []);
+	}, [openModal]);
 
 	if (!banners) return <></>;
 	return (
 		<div>
-			{/* <button
-				onClick={() => {
-					openModal(Modal, {
-						children: 'ss',
-						onSubmit: () => {
-							window.console.log('비즈니스 로직 처리');
-							openModal(Modal, {
-								children: 'a',
-								onsubmit: () => {
-									window.console.log('비즈니스 로dd직 처리');
-								},
-							});
-						},
-					});
-				}}
-			>
-				버튼
-			</button> */}
 			<MainSwiper />
 			<Wrapper>
 				{/* 오늘의 추천 상품 */}
