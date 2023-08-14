@@ -1,0 +1,272 @@
+.route {
+	position: relative;
+}
+
+.route_name {
+	height: 100%;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 20px;
+	letter-spacing: -0.3px;
+	color: #333;
+	cursor: pointer;
+}
+
+.route_name::before {
+	display: inline-block;
+	width: 16px;
+	height: 14px;
+	margin-right: 14px;
+	background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNiAxNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0wIDBoMTZ2MS43SDBWMHptMCA2LjE1aDE2djEuN0gwdi0xLjd6bTAgNi4xNWgxNlYxNEgwdi0xLjd6IiBmaWxsPSIjMzMzIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz4KPC9zdmc+Cg==)
+		0px 0px / 16px 14px no-repeat;
+	content: '';
+}
+
+.route_name:hover,
+.route_name.active {
+	color: #5f0080;
+}
+
+.route_name:hover::before,
+.route_name.active::before {
+	background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNiAxNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0wIDBoMTZ2MS43SDBWMHptMCA2LjE1aDE2djEuN0gwdi0xLjd6bTAgNi4xNWgxNlYxNEgwdi0xLjd6IiBmaWxsPSIjNUYwMDgwIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz4KPC9zdmc+Cg==)
+		0px 0px no-repeat;
+}
+
+.route_name:hover + .route_main {
+	display: block;
+	opacity: 1;
+	transition: opacity 400ms ease-out;
+}
+
+/* MAIN CATEGORY */
+.route_main {
+	position: absolute;
+	top: 38px;
+	left: -2px;
+	width: 247px;
+	border: 1px solid #ddd;
+	background-color: #fff;
+	opacity: 0;
+	transition: opacity 400ms ease-in;
+	cursor: pointer;
+	z-index: 111;
+}
+
+.route_main:hover {
+	opacity: 1;
+}
+
+.route_main > li {
+	padding: 7px 0px 9px 14px;
+}
+
+.route_main > li:hover {
+	color: #5f0080;
+	background-color: #f7f7f7;
+	font-weight: 500;
+}
+
+.route_main > li:hover > .route_sub,
+.route_main > li:hover > .route_recommended {
+	opacity: 1;
+	pointer-events: initial;
+}
+
+.route_main > li:hover .route_main_label::before {
+	background-position-x: -24px;
+}
+
+.route_main_label {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	font-size: 14px;
+}
+
+.route_main_label::before {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin-right: 10px;
+	background-position: 0 0;
+	background-size: 200% auto;
+	background-repeat: no-repeat;
+	content: '';
+}
+
+.route_main > li:nth-child(1) .route_main_label::before {
+	background-image: url('@assets/images/icon_category1.png');
+}
+
+.route_main > li:nth-child(2) .route_main_label::before {
+	background-image: url('@assets/images/icon_category2.png');
+}
+
+.route_main > li:nth-child(3) .route_main_label::before {
+	background-image: url('@assets/images/icon_category3.png');
+}
+
+.route_main > li:nth-child(4) .route_main_label::before {
+	background-image: url('@assets/images/icon_category4.png');
+}
+
+.route_main > li:nth-child(5) .route_main_label::before {
+	background-image: url('@assets/images/icon_category5.png');
+}
+
+.route_main > li:nth-child(6) .route_main_label::before {
+	background-image: url('@assets/images/icon_category6.png');
+}
+
+.route_main > li:nth-child(7) .route_main_label::before {
+	background-image: url('@assets/images/icon_category7.png');
+}
+
+.route_main > li:nth-child(8) .route_main_label::before {
+	background-image: url('@assets/images/icon_category8.png');
+}
+
+.route_main > li:nth-child(9) .route_main_label::before {
+	background-image: url('@assets/images/icon_category9.png');
+}
+
+.route_main > li:nth-child(10) .route_main_label::before {
+	background-image: url('@assets/images/icon_category10.png');
+}
+
+.route_main > li:nth-child(11) .route_main_label::before {
+	background-image: url('@assets/images/icon_category11.png');
+}
+
+.route_main > li:nth-child(12) .route_main_label::before {
+	background-image: url('@assets/images/icon_category12.png');
+}
+
+.route_main > li:nth-child(13) .route_main_label::before {
+	background-image: url('@assets/images/icon_category13.png');
+}
+
+.route_main > li:nth-child(14) .route_main_label::before {
+	background-image: url('@assets/images/icon_category14.png');
+}
+
+.route_main > li:nth-child(15) .route_main_label::before {
+	background-image: url('@assets/images/icon_category15.png');
+}
+
+.route_main > li:nth-child(16) .route_main_label::before {
+	background-image: url('@assets/images/icon_category16.png');
+}
+
+.route_main > li:nth-child(17) .route_main_label::before {
+	background-image: url('@assets/images/icon_category17.png');
+}
+
+.route_main > li:nth-child(18) .route_main_label::before {
+	background-image: url('@assets/images/icon_category18.png');
+}
+
+.route_main > li:nth-child(19) .route_main_label::before {
+	background-image: url('@assets/images/icon_category19.png');
+}
+
+.route_main > li:nth-child(20) .route_main_label::before {
+	background-image: url('@assets/images/icon_category20.png');
+}
+
+.route_main > li:nth-child(21) .route_main_label::before {
+	background-image: url('@assets/images/icon_category21.png');
+}
+
+/* SUB CATEGORY */
+
+.route_sub,
+.route_recommended {
+	position: absolute;
+	top: -1px;
+	left: 246px;
+	width: 0;
+	height: 100.2%;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	background-color: #f7f7f7;
+	overflow-y: scroll;
+	opacity: 0;
+	transition:
+		width 200ms ease-in,
+		opacity 200ms ease-in;
+	transform-origin: left;
+	overflow-x: hidden;
+	pointer-events: none;
+	z-index: 111;
+}
+
+.route_sub.active {
+	width: 266px;
+}
+
+.route_sub li {
+	padding: 11px 20px 11px 18px;
+	display: flex;
+	align-items: center;
+	color: #333;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 22px;
+}
+
+.route_sub a {
+	position: relative;
+	white-space: nowrap;
+}
+
+.route_sub li:hover {
+	color: #5f0080;
+	font-weight: 500;
+}
+
+.route_sub li:hover > a::before {
+	position: absolute;
+	bottom: 1px;
+	width: 100%;
+	height: 1.5px;
+	background-color: #5f0080;
+	content: '';
+}
+
+/* SUB CATEGORY : 컬리의추천 */
+.route_recommended {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 20px 0 0 20px;
+	overflow-y: hidden;
+}
+
+.route_recommended.active {
+	width: 535px;
+}
+
+.route_recommended li {
+	color: #333;
+	font-weight: 400;
+	margin-right: 10px;
+}
+
+.route_recommended img {
+	display: block;
+	width: 116px;
+	height: 88px;
+	margin-bottom: 8px;
+}
+
+.route_recommended span {
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.route_recommended a:hover span {
+	font-weight: 500;
+	color: #5f0080;
+	text-decoration: underline;
+}
