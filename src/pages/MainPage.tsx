@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo, useRef } from 'react';
 import axios from 'axios';
 
 import Wrapper from '@/components/Wrapper/Wrapper';
@@ -33,6 +33,8 @@ const MainPage = () => {
 	const [selectedCategory, setSelectedCategory] = useState(100);
 	const [categories, setCategories] = useState<ProductType[]>([]);
 
+	const isFirstLoaded = useRef(false);
+
 	const selectedProducts = useMemo(() => {
 		return categories?.filter(item => item.category === selectedCategory);
 	}, [categories, selectedCategory]);
@@ -64,19 +66,22 @@ const MainPage = () => {
 	const { openModal } = useModals();
 
 	useEffect(() => {
-		openModal(Modal, {
-			children: 'ss',
-			// onSubmit: () => {
-			// 	window.console.log('비즈니스 로직 처리');
-			// 	openModal(Modal, {
-			// 		children: 'a',
-			// 		onsubmit: () => {
-			// 			window.console.log('비즈니스 로dd직 처리');
-			// 		},
-			// 	});
-			// },
-		});
-	}, [openModal]);
+		if (!isFirstLoaded.current) {
+			isFirstLoaded.current = true;
+			openModal(Modal, {
+				children: 'ss',
+				// onSubmit: () => {
+				// 	window.console.log('비즈니스 로직 처리');
+				// 	openModal(Modal, {
+				// 		children: 'a',
+				// 		onsubmit: () => {
+				// 			window.console.log('비즈니스 로dd직 처리');
+				// 		},
+				// 	});
+				// },
+			});
+		}
+	}, [openModal, isFirstLoaded]);
 
 	if (!banners) return <></>;
 	return (
