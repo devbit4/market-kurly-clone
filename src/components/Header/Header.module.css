@@ -33,13 +33,6 @@
 	margin-left: 20px;
 	font-size: 18px;
 	line-height: 1.33;
-	color: #b5b5b5;
-}
-
-.markets li.active,
-.markets li:hover {
-	font-weight: 500;
-	color: #5f0080;
 }
 
 .markets li.new {
@@ -55,6 +48,16 @@
 	background-color: rgb(226, 226, 226);
 	transform: translateY(-50%);
 	content: '';
+}
+
+.markets a {
+	color: #b5b5b5;
+}
+
+.markets a.active,
+.markets a:hover {
+	font-weight: 500;
+	color: #5f0080;
 }
 
 .markets li.new::after {

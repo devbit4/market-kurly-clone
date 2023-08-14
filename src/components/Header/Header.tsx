@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import Wrapper from '@components/Wrapper/Wrapper';
 import Logo from '@components/Logo/Logo';
@@ -11,6 +11,7 @@ import styles from './Header.module.css';
 
 const Header = () => {
 	const handleFavoriteBtn = () => {};
+
 	const handleCartBtn = () => {};
 
 	return (
@@ -22,7 +23,12 @@ const Header = () => {
 						<ul>
 							{mainRoutes.map(mainRoute => (
 								<li key={mainRoute.name} className={styles[mainRoute.badge.toLowerCase()]}>
-									<Link to={mainRoute.link}>{mainRoute.name}</Link>
+									<NavLink
+										to={mainRoute.link}
+										className={({ isActive }) => (isActive ? styles.active : '')}
+									>
+										{mainRoute.name}
+									</NavLink>
 								</li>
 							))}
 						</ul>
