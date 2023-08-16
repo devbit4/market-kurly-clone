@@ -2,18 +2,22 @@ import useOutSideClick from '@/hooks/useOutsideClick';
 
 import { useCallback, useRef } from 'react';
 
-import styles from './HomeModal.module.css';
-
 import ModalContainer from './ModalContainer';
+
+import styles from './CartModal.module.css';
+import { Product } from '@/pages/MainPage';
 
 type Props = {
 	children: React.ReactNode;
 	id: string;
+	product: Product;
 	onClose: (id: string) => void;
 };
 
-const HomeModal = ({ onClose, id }: Props) => {
+const CartModal = ({ onClose, id, product }: Props) => {
 	const modalRef = useRef(null);
+
+	window.console.log(product);
 
 	const handleClose = useCallback(() => {
 		onClose && onClose(id);
@@ -26,19 +30,10 @@ const HomeModal = ({ onClose, id }: Props) => {
 	return (
 		<ModalContainer>
 			<div className={styles.overlay}>
-				<div className={styles.modalWrap} ref={modalRef}>
-					<img
-						src='https://cdn.oasis.co.kr:48581/display/collection/image/collection_veQyLNWu.jpg'
-						alt='복숭아'
-					/>
-					<div className={styles.buttons}>
-						{/* <button onClick={handleOneDayClose}>오늘 하루 보지 않기</button> */}
-						<button onClick={handleClose}>닫기</button>
-					</div>
-				</div>
+				<div className={styles.modalWrap} ref={modalRef}></div>
 			</div>
 		</ModalContainer>
 	);
 };
 
-export default HomeModal;
+export default CartModal;

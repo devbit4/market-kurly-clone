@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import * as uuid from 'uuid';
 
 import styles from './Product.module.css';
@@ -9,12 +9,12 @@ import { Autoplay, Navigation } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import { ProductType } from '@/pages/MainPage';
+import { Product } from '@/pages/MainPage';
 
 import ProductItem from './ProductItem';
 
 type Props = {
-	products: ProductType[];
+	products: Product[];
 	title?: string;
 	subTitle?: string;
 	autoPlay?: boolean;
