@@ -94,7 +94,7 @@ const MainPage = () => {
 				{/* 배너2 */}
 				<Banner banner={banners[3]} />
 
-				<ProductList title={'이 상품 어때요?'} products={products} />
+				<ProductList title={'이 상품 어때요?'} products={products} autoPlay />
 
 				{/* 이 상품 어때요? */}
 			</Wrapper>

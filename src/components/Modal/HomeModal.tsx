@@ -1,6 +1,9 @@
-// import useOutSideClick from '@/hooks/useOutsideClick';
+import useOutSideClick from '@/hooks/useOutsideClick';
+
 import { useCallback, useRef } from 'react';
+
 import styles from './Modal.module.css';
+
 import ModalContainer from './ModalContainer';
 
 type Props = {
@@ -9,29 +12,28 @@ type Props = {
 	onClose: (id: string) => void;
 };
 
-const HomeModal = ({ children, onClose, id }: Props) => {
+const HomeModal = ({ onClose, id }: Props) => {
 	const modalRef = useRef(null);
 
 	const handleClose = useCallback(() => {
 		onClose && onClose(id);
 	}, [onClose, id]);
 
-	// useOutSideClick(modalRef, handleClose);
+	// const handleOneDayClose = useCallback(() => {}, []);
+
+	useOutSideClick(modalRef, handleClose);
 
 	return (
 		<ModalContainer>
 			<div className={styles.overlay}>
 				<div className={styles.modalWrap} ref={modalRef}>
-					<div className={styles.closeButton} onClick={handleClose}>
-						닫기
-					</div>
-
-					{/* <div className={styles.closeButton} onClick={handleSubmit}>
-						제출
-					</div> */}
-
-					<div className={styles.content}>
-						<h1> {children}</h1>
+					<img
+						src='https://cdn.oasis.co.kr:48581/display/collection/image/collection_veQyLNWu.jpg'
+						alt='복숭아'
+					/>
+					<div className={styles.buttons}>
+						{/* <button onClick={handleOneDayClose}>오늘 하루 보지 않기</button> */}
+						<button onClick={handleClose}>닫기</button>
 					</div>
 				</div>
 			</div>

@@ -17,9 +17,10 @@ type Props = {
 	products: ProductType[];
 	title?: string;
 	subTitle?: string;
+	autoPlay?: boolean;
 };
 
-const ProductList = ({ title, subTitle, products }: Props) => {
+const ProductList = ({ title, subTitle, products, autoPlay }: Props) => {
 	const section = uuid.v4();
 
 	return (
@@ -37,6 +38,7 @@ const ProductList = ({ title, subTitle, products }: Props) => {
 				<Swiper
 					slidesPerView={4}
 					modules={[Autoplay, Navigation]}
+					autoplay={autoPlay && { delay: 2500, disableOnInteraction: false }}
 					navigation={{
 						nextEl: '.swiperBtnNext' + section,
 						prevEl: '.swiperBtnPrev' + section,
