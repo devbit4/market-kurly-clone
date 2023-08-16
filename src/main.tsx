@@ -2,13 +2,14 @@ import * as ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from '@/App';
-import SearchPage from '@pages/SearchPage';
+import LoginPage from '@pages/LoginPage';
 import MainPage from '@pages/MainPage';
+import UserPage from '@pages/UserPage';
+import SearchPage from '@pages/SearchPage';
+
+import ModalsProvider from './context/ModalsContext';
 
 import './global.css';
-import ModalsProvider from './context/ModalsContext';
-import UserPage from './pages/UserPage';
-import LoginPage from './pages/LoginPage';
 
 const router = createBrowserRouter([
 	{
@@ -20,16 +21,16 @@ const router = createBrowserRouter([
 				element: <MainPage />,
 			},
 			{
-				path: 'search',
-				element: <SearchPage />,
+				path: 'login',
+				element: <LoginPage />,
 			},
 			{
 				path: 'mypage/*',
 				element: <UserPage />,
 			},
 			{
-				path: 'login',
-				element: <LoginPage />,
+				path: 'search',
+				element: <SearchPage />,
 			},
 		],
 	},
