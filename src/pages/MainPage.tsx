@@ -68,7 +68,7 @@ const MainPage = () => {
 	useEffect(() => {
 		if (!isFirstLoaded.current) {
 			isFirstLoaded.current = true;
-			openModal(HomeModal, {});
+			openModal(HomeModal);
 		}
 	}, [openModal, isFirstLoaded]);
 
