@@ -1,7 +1,7 @@
 interface Checkbox {
 	isChecked: boolean;
 	onChnage: () => void;
-	children: React.ReactNode;
+	children?: React.ReactNode;
 }
 
 const Checkbox = ({ children, isChecked, onChnage }: Checkbox) => {
