@@ -1,8 +1,8 @@
-import { ProductType } from '@/pages/MainPage';
+import { Product } from '@/pages/MainPage';
 import styles from './Product.module.css';
 
 type Props = {
-	product: ProductType;
+	product: Product;
 };
 
 const ProductItem = ({ product }: Props) => {
