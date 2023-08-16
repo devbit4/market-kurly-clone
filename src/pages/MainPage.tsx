@@ -87,7 +87,7 @@ const MainPage = () => {
 				<Banner banner={banners[0]} />
 
 				{/* 카테고리별 상품 */}
-				<Category setSelectedCategory={setSelectedCategory} />
+				<Category selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
 
 				<ProductList products={selectedProducts} />
 

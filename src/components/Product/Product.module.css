@@ -244,6 +244,16 @@
 	border: none;
 }
 
+.category li button:hover {
+	background-color: rgb(247, 243, 248);
+	color: rgb(95, 0, 128);
+}
+
+.category .activeCategory button {
+	background-color: rgb(95, 0, 128);
+	color: rgb(255, 255, 255);
+}
+
 .showMoreButton {
 	display: flex;
 	justify-content: center;
