@@ -1,31 +1,62 @@
+import { useEffect, useState } from 'react';
 import styles from './SearchInput.module.css';
-import * as React from 'react';
-import { useState } from 'react';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 
-type SearchInputProps = {
-	onSearch: (query: string) => void; // 부모 컴포넌트로 검색어 전달하는 콜백 함수
-};
+interface SearchInput {
+	isScrolled: boolean;
+}
 
-const SearchInput: React.FC<SearchInputProps> = ({ onSearch }) => {
-	const [searchQuery, setSearchQuery] = useState('');
+const SearchInput = ({ isScrolled }: SearchInput) => {
+	const navigate = useNavigate();
+	const location = useLocation();
+	const [searchParams, setSearchParams] = useSearchParams();
+	const [value, setValue] = useState('');
 
-	const handleSearch = () => {
-		onSearch(searchQuery); // 검색 쿼리를 부모 컴포넌트로 전달
+	const handleSearchValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setValue(e.target.value);
 	};
 
+	const deleteSearchValue = () => {
+		setValue('');
+	};
+
+	const submitSearchValue = (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		const isSearchPage = location.pathname === '/search';
+		if (!isSearchPage) {
+			navigate(`/search?sword=${value}`);
+		} else {
+			setSearchParams({ sword: value });
+		}
+	};
+
+	useEffect(() => {
+		const searchQuery = searchParams.get('sword');
+		const searchValue = searchQuery ? searchQuery : '';
+		setValue(() => searchValue);
+	}, [searchParams]);
+
 	return (
-		<div className={styles.search}>
+		<form
+			className={`${styles.search} ${isScrolled ? styles.active : ''}`}
+			onSubmit={submitSearchValue}
+		>
 			<input
 				type='text'
 				placeholder='검색어를 입력해주세요'
 				className={styles.input_search}
-				value={searchQuery}
-				onChange={e => setSearchQuery(e.target.value)}
+				onChange={handleSearchValue}
+				value={value}
 			/>
-			<button type='button' className={styles.btn_search} onClick={handleSearch}>
+			{value.length > 0 && (
+				<button type='button' className={styles.btn_reset} onClick={deleteSearchValue}>
+					<span className='sr_only'>삭제하기</span>
+				</button>
+			)}
+			<button type='submit' className={styles.btn_search}>
 				<span className='sr_only'>검색하기</span>
 			</button>
-		</div>
+		</form>
 	);
 };
 

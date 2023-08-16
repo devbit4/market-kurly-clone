@@ -1,6 +1,8 @@
 .header {
 	position: relative;
+	width: 100%;
 	background-color: #fff;
+	z-index: 1111;
 }
 
 .header::after {
@@ -33,13 +35,6 @@
 	margin-left: 20px;
 	font-size: 18px;
 	line-height: 1.33;
-	color: #b5b5b5;
-}
-
-.markets li.active,
-.markets li:hover {
-	font-weight: 500;
-	color: #5f0080;
 }
 
 .markets li.new {
@@ -55,6 +50,16 @@
 	background-color: rgb(226, 226, 226);
 	transform: translateY(-50%);
 	content: '';
+}
+
+.markets a {
+	color: #b5b5b5;
+}
+
+.markets a.active,
+.markets a:hover {
+	font-weight: 500;
+	color: #5f0080;
 }
 
 .markets li.new::after {
@@ -349,4 +354,37 @@
 .header_aside_sub li {
 	height: 24px;
 	line-height: 24px;
+}
+
+/* HEADER - SCROLL */
+.header.active {
+	position: fixed;
+}
+
+.header.active .markets,
+.header.active .header_aside,
+.header.active .route_notice_delivery {
+	display: none;
+}
+
+.header.active .header_top {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	width: 406px;
+	height: auto;
+	padding-top: 0;
+	transform: translateY(-50%);
+}
+
+.header.active .header_bottom {
+	justify-content: flex-start;
+}
+
+.header.active .route_themes {
+	margin-left: 20px;
+}
+
+.header.active .route_themes li {
+	width: 120px;
 }

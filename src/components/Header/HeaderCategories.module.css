@@ -2,8 +2,13 @@
 	position: relative;
 }
 
+.route.active {
+	width: 120px;
+}
+
 .route_name {
 	height: 100%;
+	padding: 18px 0;
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 20px;
@@ -33,28 +38,22 @@
 		0px 0px no-repeat;
 }
 
-.route_name:hover + .route_main {
-	display: block;
-	opacity: 1;
-	transition: opacity 400ms ease-out;
-}
-
 /* MAIN CATEGORY */
 .route_main {
 	position: absolute;
-	top: 38px;
+	top: 56px;
 	left: -2px;
+	display: none;
 	width: 247px;
 	border: 1px solid #ddd;
 	background-color: #fff;
-	opacity: 0;
-	transition: opacity 400ms ease-in;
 	cursor: pointer;
 	z-index: 111;
 }
 
-.route_main:hover {
-	opacity: 1;
+.route_main:hover,
+.route_name:hover + .route_main {
+	display: block;
 }
 
 .route_main > li {

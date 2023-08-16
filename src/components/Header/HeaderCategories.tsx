@@ -3,14 +3,18 @@ import { Link } from 'react-router-dom';
 import styles from './HeaderCategories.module.css';
 import { categoryRoutes } from './header-routes';
 
-const HeaderCategories = () => {
+interface HeaderCategories {
+	isScrolled: boolean;
+}
+
+const HeaderCategories = ({ isScrolled }: HeaderCategories) => {
 	const [isSubCategoryActive, setIsSubCategoryActive] = useState(false);
 	const getClassName = (defaultStyle: string) => {
 		return isSubCategoryActive ? `${defaultStyle} ${styles.active}` : defaultStyle;
 	};
 
 	return (
-		<div className={styles.route}>
+		<div className={`${styles.route} ${isScrolled ? styles.active : ''}`}>
 			<div className={getClassName(styles.route_name)}>카테고리</div>
 			<ul
 				className={styles.route_main}

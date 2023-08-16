@@ -17,7 +17,7 @@ import gnbRecommendImage16 from '@assets/images/img_gnb_recommend16.png';
 
 export const mainRoutes = [
 	{ name: '마켓컬리', link: '/', badge: 'NONE' },
-	{ name: '뷰티컬리', link: '/', badge: 'NEW' },
+	{ name: '뷰티컬리', link: '/beauty', badge: 'NEW' },
 ];
 
 export const userRoutes = [
@@ -361,8 +361,8 @@ export const categoryRoutes = [
 ];
 
 export const themeRoutes = [
-	{ name: '신상품', link: '/' },
-	{ name: '베스트', link: '/' },
-	{ name: '알뜰쇼핑', link: '/' },
-	{ name: '특가/혜택', link: '/' },
+	{ name: '신상품', link: '/collections/market-newproduct' },
+	{ name: '베스트', link: '/collections/market-best' },
+	{ name: '알뜰쇼핑', link: '/collections/market-time-sales' },
+	{ name: '특가/혜택', link: '/market-benefit' },
 ];
