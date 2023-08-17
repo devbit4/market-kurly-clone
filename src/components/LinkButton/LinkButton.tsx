@@ -12,7 +12,7 @@ const LinkButton = ({ type, url, children }: LinkButton) => {
 	const isGlobalLink = url.includes('http');
 
 	return (
-		<div className={`${styles.button} ${styles[type]}`}>
+		<div className={`${styles.button} ${styles[type.toLowerCase()]}`}>
 			{isGlobalLink ? <a href={url}>{children}</a> : <Link to={url}>{children}</Link>}
 		</div>
 	);

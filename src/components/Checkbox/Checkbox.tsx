@@ -1,3 +1,5 @@
+import styles from './Checkbox.module.css';
+
 interface Checkbox {
 	isChecked: boolean;
 	onChnage: () => void;
@@ -6,9 +8,9 @@ interface Checkbox {
 
 const Checkbox = ({ children, isChecked, onChnage }: Checkbox) => {
 	return (
-		<label>
+		<label className={styles.checkbox}>
 			<input type='checkbox' className='sr_only' onChange={onChnage} />
-			<div>
+			<div className={styles.icon}>
 				<svg
 					width='24'
 					height='24'

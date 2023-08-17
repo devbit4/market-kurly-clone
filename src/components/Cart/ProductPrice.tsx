@@ -2,7 +2,7 @@ import styles from './ProductPrice.module.css';
 
 const ProductPrice = () => {
 	return (
-		<div>
+		<div className={styles.price_wrap}>
 			<dl className={styles.price_info}>
 				<div>
 					<dt>상품 금액</dt>
@@ -23,7 +23,7 @@ const ProductPrice = () => {
 					<span>0</span>원
 				</dd>
 			</dl>
-			<div>
+			<div className={styles.notice}>
 				<span className={styles.badge}>적립</span>
 				<strong>로그인 후 회원 등급에 따라 적립</strong>
 			</div>

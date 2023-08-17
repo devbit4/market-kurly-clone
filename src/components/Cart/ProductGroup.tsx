@@ -15,7 +15,7 @@ const ProductGroup = ({ category, products }: ProductGroup) => {
 	return (
 		<div className={styles.product_group}>
 			<h3 className={styles.product_category}>
-				<span className={icon}>{category}</span>
+				<span className={`${styles.category_title} ${icon}`}>{category}</span>
 				<button
 					type='button'
 					className={styles.btn_dropdown}
