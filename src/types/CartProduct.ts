@@ -39,6 +39,13 @@ export interface CartItems {
 	quantity: number;
 }
 
+export interface CartPriceInfo {
+	price: number;
+	discountPrice: number;
+	deliveryFee: number;
+	totalPrice: number;
+}
+
 interface Tags {
 	name: string;
 	type: string;
