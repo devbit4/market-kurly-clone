@@ -29,7 +29,7 @@ export const userRoutes = [
 		subRoutes: [
 			{ name: '공지사항', link: '/' },
 			{ name: '자주하는 질문', link: '/' },
-			{ name: '1:1 문의', link: '/' },
+			{ name: '1:1 문의', link: '/mypage/inquiry/list' },
 			{ name: '대량 주문 문의', link: '/' },
 		],
 	},

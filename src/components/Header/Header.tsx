@@ -1,4 +1,5 @@
-import { Link, NavLink } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 import Wrapper from '@components/Wrapper/Wrapper';
 import Logo from '@components/Logo/Logo';
@@ -8,9 +9,9 @@ import HeaderCategories from '@components/Header/HeaderCategories';
 
 import { mainRoutes, themeRoutes, userRoutes } from './header-routes';
 import styles from './Header.module.css';
-import { useEffect, useState } from 'react';
 
 const Header = () => {
+	const navigate = useNavigate();
 	const [isScrolledDown, setIsScrolledDown] = useState(false);
 
 	useEffect(() => {
@@ -29,7 +30,9 @@ const Header = () => {
 		return () => window.removeEventListener('scroll', handleHeaderStyle);
 	}, [isScrolledDown]);
 
-	const handleFavoriteBtn = () => {};
+	const handleFavoriteBtn = () => {
+		navigate('/mypage/pick/list');
+	};
 
 	const handleCartBtn = () => {};
 

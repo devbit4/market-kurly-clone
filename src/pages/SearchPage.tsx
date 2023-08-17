@@ -3,7 +3,6 @@ import { useEffect, useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import axios from 'axios';
-// import SearchInput from '@/components/SearchInput/SearchInput';
 import Wrapper from '@/components/Wrapper/Wrapper';
 import ProductList from '@/components/Product/ProductList';
 import Pagination from '@/components/SearchInput/Pagination';
@@ -55,7 +54,6 @@ const SearchPage = () => {
 		axios.get(`/dbs/mainBanner.json`).then(data => {
 			setBanners(data.data.products);
 		});
-
 	}, []);
 
 	useEffect(() => {
@@ -66,6 +64,7 @@ const SearchPage = () => {
 
 	// 검색어에 따라 상품을 필터링하여 보여주는 효과를 정의
 	useEffect(() => {
+    
 		const sword = searchParams.get('sword');
 		if (sword) {
 			const filtered = selectedProducts?.filter(item =>
@@ -76,7 +75,6 @@ const SearchPage = () => {
 			setFilteredProducts(selectedProducts || []);
 		}
 	}, [selectedProducts, searchParams]);
-
 
 	// '높은가격순' 버튼 클릭 시 상품을 높은 가격순으로 정렬하는 함수를 정의
 	const handleSortHighToLow = () => {
@@ -114,6 +112,7 @@ const SearchPage = () => {
 	return (
 		<div className={styles.container}>
 			<Wrapper>
+
 				<div className={styles.productList}>
 					{searchParams.get('sword') ? (
 						<div className={`${styles.resultText} ${styles.searchQueryText}`}>
@@ -155,6 +154,7 @@ const SearchPage = () => {
 							</div>
 						</>
 					)}
+
 				</div>
 			</Wrapper>
 		</div>
