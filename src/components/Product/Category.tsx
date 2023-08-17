@@ -1,10 +1,11 @@
 import styles from './Product.module.css';
 
 type Props = {
+	selectedCategory: number;
 	setSelectedCategory: (category: number) => void;
 };
 
-const Category = ({ setSelectedCategory }: Props) => {
+const Category = ({ selectedCategory, setSelectedCategory }: Props) => {
 	const handleCategoryChange = (category: number) => {
 		setSelectedCategory(category);
 	};
@@ -19,16 +20,16 @@ const Category = ({ setSelectedCategory }: Props) => {
 			</div>
 
 			<ul className={styles.category}>
-				<li>
+				<li className={selectedCategory === 100 ? styles.activeCategory : undefined}>
 					<button onClick={() => handleCategoryChange(100)}>카테고리1</button>
 				</li>
-				<li>
+				<li className={selectedCategory === 101 ? styles.activeCategory : undefined}>
 					<button onClick={() => handleCategoryChange(101)}>카테고리2</button>
 				</li>
-				<li>
+				<li className={selectedCategory === 102 ? styles.activeCategory : undefined}>
 					<button onClick={() => handleCategoryChange(102)}>카테고리3</button>
 				</li>
-				<li>
+				<li className={selectedCategory === 103 ? styles.activeCategory : undefined}>
 					<button onClick={() => handleCategoryChange(103)}>카테고리4</button>
 				</li>
 			</ul>

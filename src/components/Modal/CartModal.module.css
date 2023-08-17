@@ -1,0 +1,150 @@
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.2);
+	z-index: 9999;
+}
+
+.modalWrap {
+	width: 440px;
+	background-color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 10px;
+}
+
+.cartWrap {
+	padding: 30px;
+	border-radius: 5px;
+}
+
+.info {
+	overflow: hidden auto;
+	max-height: 355px;
+	min-height: 120px;
+}
+
+.cartTitle {
+	padding-bottom: 12px;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 24px;
+	border-bottom: 1px solid rgb(51, 51, 51);
+}
+
+.cartInfo {
+	display: flex;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	align-items: center;
+	padding-top: 6px;
+}
+
+.productPrice span:nth-child(1) {
+	font-weight: bold;
+	font-size: 16px;
+	color: rgb(51, 51, 51);
+	line-height: 21px;
+}
+
+.productPrice span:nth-child(2) {
+	margin-left: 4px;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgb(181, 181, 181);
+	text-decoration: line-through;
+	line-height: 19px;
+}
+
+.cartPrice {
+	width: 100%;
+	margin: 20px 0px;
+}
+
+.cartPriceDetail {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.cartPriceDetail p {
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 600;
+}
+
+.cartPriceDetail div span:nth-child(1) {
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 24px;
+}
+
+.cartPriceDetail div span:nth-child(2) {
+	margin-left: 3px;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 24px;
+	vertical-align: 3px;
+}
+
+.cartGuide {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding-top: 6px;
+}
+
+.cartGuide span {
+	width: 38px;
+	height: 20px;
+	margin-right: 6px;
+	border-radius: 9px;
+	background-color: rgb(255, 191, 0);
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 20px;
+	color: rgb(255, 255, 255);
+	text-align: center;
+}
+
+.cartGuide p {
+	font-size: 14px;
+	line-height: 1.33;
+	color: rgb(51, 51, 51);
+}
+
+.cartButtons {
+	display: flex;
+	flex-direction: row;
+}
+
+.cartButtons button {
+	width: 50%;
+	margin: 0px 4px;
+	height: 52px;
+	border-radius: 3px;
+	display: block;
+	padding: 0px 10px;
+	text-align: center;
+	border: 1px solid rgb(221, 221, 221);
+	font-size: 14px;
+}
+
+.cartButtons .cancelButton {
+	color: rgb(51, 51, 51);
+	background-color: rgb(255, 255, 255);
+}
+
+.cartButtons .addButton {
+	color: rgb(255, 255, 255);
+	background-color: rgb(95, 0, 128);
+	border: 0px none;
+}

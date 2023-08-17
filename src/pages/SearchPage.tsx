@@ -3,7 +3,6 @@ import { useEffect, useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import axios from 'axios';
-// import SearchInput from '@/components/SearchInput/SearchInput';
 import Wrapper from '@/components/Wrapper/Wrapper';
 import ProductList from '@/components/Product/ProductList';
 import Pagination from '@/components/SearchInput/Pagination';
@@ -115,6 +114,9 @@ const SearchPage = () => {
 		<div className={styles.container}>
 			<Wrapper>
 				<div className={styles.searchsection}>
+
+					<span className={styles.totalCount}>총{filteredProducts.length}건</span>
+
 					<div className={styles.buttonBar}>
 					<span className={styles.totalCount}>총
 				<span className={styles.count}>{filteredProducts.length}
@@ -125,6 +127,7 @@ const SearchPage = () => {
 						<HighPriceSortButton onClick={handleSortHighToLow}>| 높은가격순 |</HighPriceSortButton>
 						<LowPriceSortButton onClick={handleSortLowToHigh}>낮은가격순</LowPriceSortButton>
 					</div>
+            
 					<div className={styles.productList}>{searchParams.get('sword') ? (
 						<h2 className={`${styles.resultText} ${styles.searchQueryText}`}>
 						<span className={styles.searchQuery}>{'\'' + searchParams.get('sword') + '\''}</span>
@@ -138,6 +141,7 @@ const SearchPage = () => {
 		<>{<ProductList products={currentItems} />}</>
 	)}
 		</div>
+
 				</div>
 				<div className={styles.paginationCenter}>
 					<Pagination

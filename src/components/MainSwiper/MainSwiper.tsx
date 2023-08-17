@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { clsx } from 'clsx';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper';
 
@@ -6,15 +8,20 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+import styles from './MainSwiper.module.css';
+
 const MainSwiper: React.FC = () => {
 	return (
-		<div style={{ marginBottom: '40px' }}>
+		<div className={styles.mainSwiperContainer}>
 			<Swiper
 				loop={true}
 				loopAdditionalSlides={1}
 				autoplay={{ delay: 2500, disableOnInteraction: false }}
 				modules={[Autoplay, Navigation, Pagination]}
-				navigation={true}
+				navigation={{
+					nextEl: '.swiperBtnNext',
+					prevEl: '.swiperBtnPrev',
+				}}
 				pagination={{
 					type: 'fraction',
 				}}
@@ -53,6 +60,8 @@ const MainSwiper: React.FC = () => {
 					</div>
 				</SwiperSlide>
 			</Swiper>
+			<button className={clsx('swiperBtnNext', styles.swiperNext)}></button>
+			<button className={clsx('swiperBtnPrev', styles.swiperPrev)}></button>
 		</div>
 	);
 };
