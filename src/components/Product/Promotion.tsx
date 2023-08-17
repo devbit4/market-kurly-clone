@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import * as moment from 'moment';
+import moment from 'moment';
 import { clsx } from 'clsx';
 
 import styles from './Product.module.css';
