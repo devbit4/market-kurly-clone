@@ -10,6 +10,7 @@ import SearchPage from '@pages/SearchPage';
 import ModalsProvider from './context/ModalsContext';
 
 import './global.css';
+import CartPage from './pages/CartPage';
 
 const router = createBrowserRouter([
 	{
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
 			{
 				path: '',
 				element: <MainPage />,
+			},
+			{
+				path: 'cart',
+				element: <CartPage />,
 			},
 			{
 				path: 'login',
