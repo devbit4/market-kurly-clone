@@ -9,6 +9,7 @@ export default defineConfig({
 		ViteAliases({
 			prefix: '@',
 			useConfig: true,
+			depth: 0,
 		}),
 	],
 	server: {

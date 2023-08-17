@@ -1,0 +1,649 @@
+{
+	"products": [
+		{
+			"no": 5071383,
+			"name": "[미트지엥] Flex 안심 찹스테이크",
+			"short_description": "100g 당 9300원",
+			"list_image_url": "https://img-cf.kurly.com/shop/data/goods/1637928655838l0.jpg",
+			"sales_price": 27900,
+			"discounted_price": 23715,
+			"discount_rate": 15,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Coming Soon",
+			"sold_out_text": "",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [],
+			"sticker": null,
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "555"
+		},
+		{
+			"no": 1000088313,
+			"name": "[이어수산] 8단계 선별한 볶음용 멸치 300g",
+			"short_description": "식탁 위 고소한 밥반찬",
+			"list_image_url": "https://product-image.kurly.com/product/image/56090fda-ff8f-4119-beb4-556de066d0f3.jpg",
+			"sales_price": 9900,
+			"discounted_price": 8910,
+			"discount_rate": 10,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Coming Soon",
+			"sold_out_text": "",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [
+				{
+					"name": "Kurly Only",
+					"type": "KURLY_ONLY"
+				}
+			],
+			"sticker": {
+				"content": [
+					{
+						"text": "+20%쿠폰",
+						"weight": "bold"
+					}
+				],
+				"opacity": 90,
+				"background_color": "#BD76FF"
+			},
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "999+"
+		},
+		{
+			"no": 1000094698,
+			"name": "[모현상회] 명란 알탕",
+			"short_description": "탱글한 식감과 고소한 맛",
+			"list_image_url": "https://product-image.kurly.com/product/image/27059dd5-8d26-4037-a9c0-b919bfa5d1ce.jpg",
+			"sales_price": 10450,
+			"discounted_price": 8882,
+			"discount_rate": 15,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Coming Soon",
+			"sold_out_text": "",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [],
+			"sticker": null,
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "266"
+		},
+		{
+			"no": 1000053478,
+			"name": "[그린너트] 마르코나 아몬드 300g",
+			"short_description": "풍미 짙은 아몬드의 제왕",
+			"list_image_url": "https://product-image.kurly.com/product/image/8cd35904-75c3-4b76-ad53-d85f58ec1725.jpg",
+			"sales_price": 14000,
+			"discounted_price": 13020,
+			"discount_rate": 7,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Coming Soon",
+			"sold_out_text": "",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [],
+			"sticker": null,
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "104"
+		},
+		{
+			"no": 5027039,
+			"name": "[올반] 명란 군만두 (315g X 2봉)",
+			"short_description": "바삭하게 퍼지는 명란의 감칠맛",
+			"list_image_url": "https://img-cf.kurly.com/shop/data/goods/1531379241752l0.jpg",
+			"sales_price": 8380,
+			"discounted_price": 7540,
+			"discount_rate": 10,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Coming Soon",
+			"sold_out_text": "",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [],
+			"sticker": {
+				"content": [
+					{
+						"text": "+20%쿠폰",
+						"weight": "bold"
+					}
+				],
+				"opacity": 90,
+				"background_color": "#BD76FF"
+			},
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "999+"
+		},
+		{
+			"no": 5075572,
+			"name": "[또또맘] 리얼딸기구마 20gx10입",
+			"short_description": "무농약 고구마와 딸기의 만남",
+			"list_image_url": "https://img-cf.kurly.com/shop/data/goods/1624941769358l0.jpg",
+			"sales_price": 16900,
+			"discounted_price": 15210,
+			"discount_rate": 10,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Coming Soon",
+			"sold_out_text": "",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [],
+			"sticker": null,
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "124"
+		},
+		{
+			"no": 5128372,
+			"name": "[베이켓 : Bake it easy] 소세지 패스츄리 생지",
+			"short_description": "완벽한 조합의 패스츄리",
+			"list_image_url": "https://img-cf.kurly.com/shop/data/goods/1651126347709l0.jpg",
+			"sales_price": 7700,
+			"discounted_price": 6500,
+			"discount_rate": 15,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Coming Soon",
+			"sold_out_text": "",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [
+				{
+					"name": "Kurly Only",
+					"type": "KURLY_ONLY"
+				}
+			],
+			"sticker": null,
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "330"
+		},
+		{
+			"no": 5068252,
+			"name": "[에브리데이365] 퍼퓨밍 핸드크림 50ml 7종",
+			"short_description": "건조한 손을 촉촉하고 향기롭게",
+			"list_image_url": "https://img-cf.kurly.com/shop/data/goods/1615783528741l0.jpg",
+			"sales_price": 18000,
+			"discounted_price": 5400,
+			"discount_rate": 70,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Coming Soon",
+			"sold_out_text": "",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [],
+			"sticker": null,
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "94"
+		},
+		{
+			"no": 5155468,
+			"name": "[그린너트] 편안한 저녁을 위한 릴렉스 600g (20gX30개입)",
+			"short_description": "건타트체리가 선사하는 아늑함",
+			"list_image_url": "https://img-cf.kurly.com/shop/data/goods/1657693917895l0.jpg",
+			"sales_price": 24900,
+			"discounted_price": 22410,
+			"discount_rate": 10,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Coming Soon",
+			"sold_out_text": "",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [],
+			"sticker": null,
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "118"
+		},
+		{
+			"no": 5051728,
+			"name": "[바다원] 어린이 김자반 40g",
+			"short_description": "멸치의 영양까지 쏙쏙 담아낸",
+			"list_image_url": "https://product-image.kurly.com/product/image/4573e54a-ce75-4097-805d-f48eaed6d0b8.jpg",
+			"sales_price": 2200,
+			"discounted_price": 1870,
+			"discount_rate": 15,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Coming Soon",
+			"sold_out_text": "",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [],
+			"sticker": null,
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "999+"
+		},
+		{
+			"no": 5104041,
+			"name": "[정다운] 느린농장 오리 다리살 500g",
+			"short_description": "깔끔하게 담은 무항생제 오리 다리 ",
+			"list_image_url": "https://img-cf.kurly.com/shop/data/goods/1642565488520l0.jpg",
+			"sales_price": 11500,
+			"discounted_price": 10690,
+			"discount_rate": 7,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Coming Soon",
+			"sold_out_text": "",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [
+				{
+					"name": "Kurly Only",
+					"type": "KURLY_ONLY"
+				}
+			],
+			"sticker": null,
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "392"
+		},
+		{
+			"no": 1000066027,
+			"name": "[만선] 남해안 바지락 500g (생물)",
+			"short_description": "쫄깃한 속살의 달큰한 육즙",
+			"list_image_url": "https://product-image.kurly.com/product/image/24ae823f-72c9-4492-be8b-690ee64bf0bc.jpg",
+			"sales_price": 5500,
+			"discounted_price": 5110,
+			"discount_rate": 7,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Coming Soon",
+			"sold_out_text": "",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [],
+			"sticker": {
+				"content": [
+					{
+						"text": "+20%쿠폰",
+						"weight": "bold"
+					}
+				],
+				"opacity": 90,
+				"background_color": "#BD76FF"
+			},
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "999+"
+		},
+		{
+			"no": 5090276,
+			"name": "[자연실록] 무항생제 닭볶음탕용 800g",
+			"short_description": "100g 당 987.5원",
+			"list_image_url": "https://product-image.kurly.com/product/image/25fe989a-a432-4067-90f1-04e18ff4ea34.jpeg",
+			"sales_price": 7900,
+			"discounted_price": 7110,
+			"discount_rate": 10,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Coming Soon",
+			"sold_out_text": "",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [],
+			"sticker": {
+				"content": [
+					{
+						"text": "+10%쿠폰",
+						"weight": "bold"
+					}
+				],
+				"opacity": 90,
+				"background_color": "#BD76FF"
+			},
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "999+"
+		},
+		{
+			"no": 5106372,
+			"name": "[스칸팬] CTX 더치오븐 팟 3.5L",
+			"short_description": "국물 요리부터 찜까지 활용도가 높은",
+			"list_image_url": "https://img-cf.kurly.com/shop/data/goods/1649322099927l0.jpg",
+			"sales_price": 290000,
+			"discounted_price": 227000,
+			"discount_rate": 21,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Coming Soon",
+			"sold_out_text": "",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [],
+			"sticker": null,
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "11"
+		},
+		{
+			"no": 5059701,
+			"name": "[카프리썬] 오렌지 (200mL X 10개)",
+			"short_description": "기분좋게 번지는 새콤달콤함 (200ml*10입)",
+			"list_image_url": "https://product-image.kurly.com/product/image/33050072-4c33-4990-abc1-f8bc543c9852.jpg",
+			"sales_price": 6980,
+			"discounted_price": 6140,
+			"discount_rate": 12,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Coming Soon",
+			"sold_out_text": "",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [],
+			"sticker": null,
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "999+"
+		},
+		{
+			"no": 5086758,
+			"name": "Hallo! 국산 고등어 120~140g*3입 (냉동)",
+			"short_description": "손질 필요 없는 국산 고등어",
+			"list_image_url": "https://img-cf.kurly.com/shop/data/goods/1637921309446l0.jpeg",
+			"sales_price": 7800,
+			"discounted_price": 7250,
+			"discount_rate": 7,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Coming Soon",
+			"sold_out_text": "",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [
+				{
+					"name": "Kurly Only",
+					"type": "KURLY_ONLY"
+				}
+			],
+			"sticker": {
+				"content": [
+					{
+						"text": "+20%쿠폰",
+						"weight": "bold"
+					}
+				],
+				"opacity": 90,
+				"background_color": "#BD76FF"
+			},
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "999+"
+		},
+		{
+			"no": 5110189,
+			"name": "[샬] 12사딘 밀크 초콜릿 120g",
+			"short_description": "프리미엄 초콜릿에 위트 한 스푼",
+			"list_image_url": "https://img-cf.kurly.com/shop/data/goods/1642471531288l0.jpg",
+			"sales_price": 18000,
+			"discounted_price": 15300,
+			"discount_rate": 15,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Coming Soon",
+			"sold_out_text": "",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [],
+			"sticker": null,
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "151"
+		},
+		{
+			"no": 1000072342,
+			"name": "[대천김] 구이김밥용김 22g X 3봉",
+			"short_description": "넉넉하게 구비하는 김밥김",
+			"list_image_url": "https://product-image.kurly.com/product/image/13b40873-db33-4029-86d1-805d3922d845.jpg",
+			"sales_price": 4500,
+			"discounted_price": 4000,
+			"discount_rate": 11,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Coming Soon",
+			"sold_out_text": "",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [],
+			"sticker": null,
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "999+"
+		},
+		{
+			"no": 1000081875,
+			"name": "[셰프의 장] 최인선셰프 순살게장 (양념) 500g",
+			"short_description": "입맛이 확 살아나는 감칠맛",
+			"list_image_url": "https://product-image.kurly.com/product/image/db9d9305-4ecd-4dd2-8062-d8eeb307ff98.jpg",
+			"sales_price": 29800,
+			"discounted_price": 27600,
+			"discount_rate": 7,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Coming Soon",
+			"sold_out_text": "",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [],
+			"sticker": null,
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "69"
+		},
+		{
+			"no": 5077458,
+			"name": "[크라운] 죠리퐁 마시멜로 195g (39g x 5팩)",
+			"short_description": "달콤한 마시멜로와 즐기는 죠리퐁",
+			"list_image_url": "https://img-cf.kurly.com/shop/data/goods/1625031678633l0.jpg",
+			"sales_price": 3980,
+			"discounted_price": 3480,
+			"discount_rate": 12,
+			"is_multiple_price": false,
+			"is_buy_now": false,
+			"is_purchase_status": true,
+			"is_giftable": false,
+			"is_only_adult": false,
+			"is_shown": true,
+			"is_sold_out": false,
+			"sold_out_title": "Coming Soon",
+			"sold_out_text": "",
+			"can_restock_notify": true,
+			"product_view_status": "BUY_POSSIBLE",
+			"not_purchase_message": "Coming Soon",
+			"delivery_type_names": ["샛별배송"],
+			"tags": [],
+			"sticker": null,
+			"group_product": {
+				"is_group": false,
+				"is_not_representative": false
+			},
+			"review_count": "999+"
+		}
+	]
+}

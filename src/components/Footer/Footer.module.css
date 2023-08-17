@@ -1,0 +1,158 @@
+.footer {
+	border-top: 1px solid #f7f7f7;
+}
+
+.footer_top {
+	display: flex;
+	padding: 30px 0;
+	justify-content: space-between;
+}
+
+.footer_top h3 {
+	padding-bottom: 17px;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 29px;
+}
+
+.contact_work_time {
+	display: block;
+	padding-bottom: 20px;
+}
+
+.contact_work_time strong {
+	font-size: 28px;
+	line-height: 40px;
+}
+
+.contact_work_time span {
+	margin-left: 8px;
+	font-weight: normal;
+	font-size: 16px;
+}
+
+.contact_group {
+	display: flex;
+	align-items: center;
+	margin-bottom: 16px;
+}
+
+.contact_group button {
+	display: block;
+	width: 140px;
+	height: 40px;
+	border: 1px solid #e2e2e2;
+	border-radius: 3px;
+	line-height: 39px;
+	text-align: center;
+	margin-right: 16px;
+}
+
+.contact_group div {
+	color: #999;
+	font-size: 14px;
+	letter-spacing: -0.5px;
+	line-height: 16.8px;
+}
+
+.contact_guest {
+	font-size: 12px;
+	line-height: 18px;
+	color: #999;
+}
+
+.footer_links {
+	display: flex;
+	margin-bottom: 29px;
+}
+
+.footer_links li {
+	margin-right: 14px;
+}
+
+.footer_links li:last-child {
+	margin-right: 0;
+}
+
+.footer_links a {
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.address {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 18px;
+	color: #999;
+	margin-bottom: 40px;
+}
+
+.address a {
+	margin-left: 3px;
+	color: #5f0080;
+}
+
+.sns_links {
+	display: flex;
+}
+
+.sns_links li {
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+}
+
+.sns_links a {
+	display: block;
+	height: 100%;
+}
+
+.sns_links img {
+	display: block;
+	width: 100%;
+}
+
+.footer_middle {
+	display: flex;
+	justify-content: space-between;
+	padding: 26px 0 33px;
+	border-top: 1px solid #eee;
+}
+
+.footer_info {
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer_info img {
+	width: 34px;
+	margin-right: 10px;
+}
+
+.footer_info:nth-child(3) img {
+	width: 102px;
+}
+
+.footer_info p {
+	font-size: 10px;
+	line-height: 14.5px;
+	color: #999;
+	word-break: break-word;
+}
+
+.footer_bottom {
+	padding: 20px 0 30px;
+	font-size: 10px;
+	line-height: 15px;
+	text-align: center;
+	background-color: #f7f7f7;
+	color: #999;
+}
+
+.footer_bottom p {
+	margin-bottom: 7px;
+}
+
+.footer_bottom strong {
+	font-weight: 400;
+}

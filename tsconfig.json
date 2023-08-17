@@ -2,15 +2,11 @@
 	"compilerOptions": {
 		"target": "ES2020",
 		"useDefineForClassFields": true,
-		"lib": [
-			"ES2020",
-			"DOM",
-			"DOM.Iterable"
-		],
+		"lib": ["ES2020", "DOM", "DOM.Iterable"],
 		"module": "ESNext",
 		"skipLibCheck": true,
 		/* Bundler mode */
-		"moduleResolution": "bundler",
+		"moduleResolution": "node",
 		"allowImportingTsExtensions": true,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
@@ -23,32 +19,17 @@
 		"noFallthroughCasesInSwitch": true,
 		"baseUrl": ".",
 		"paths": {
-			"@assets/*": [
-				"src/assets/*"
-			],
-			"@/*": [
-				"src/*"
-			],
-			"@components/*": [
-				"src/components/*"
-			],
-			"@pages/*": [
-				"src/pages/*"
-			],
-			"@layouts/*": [
-				"src/layouts/*"
-			],
-			"@images/*": [
-				"src/assets/images/*"
-			],
-			"@hooks/*": [
-				"src/hooks/*"
-			]
+			"@assets/*": ["src/assets/*"],
+			"@/*": ["src/*"],
+			"@components/*": ["src/components/*"],
+			"@pages/*": ["src/pages/*"],
+			"@layouts/*": ["src/layouts/*"],
+			"@images/*": ["src/assets/images/*"],
+			"@hooks/*": ["src/hooks/*"],
+			"@context/*": ["src/context/*"]
 		}
 	},
-	"include": [
-		"src"
-	],
+	"include": ["src"],
 	"references": [
 		{
 			"path": "./tsconfig.node.json"
