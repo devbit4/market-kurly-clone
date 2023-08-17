@@ -9,9 +9,9 @@ import Promotion from '@/components/Product/Promotion';
 import Banner from '@/components/Product/Banner';
 import Category from '@/components/Product/Category';
 import useModals from '@/hooks/useModals';
-import Modal from '@/components/Modal/Modal';
+import HomeModal from '@/components/Modal/HomeModal';
 
-export type ProductType = {
+export type Product = {
 	no: number;
 	name: string;
 	discount_rate: number;
@@ -27,11 +27,11 @@ export type BannerType = {
 };
 
 const MainPage = () => {
-	const [products, setProducts] = useState<ProductType[]>([]);
-	const [promotions, setPromotions] = useState<ProductType[]>([]);
+	const [products, setProducts] = useState<Product[]>([]);
+	const [promotions, setPromotions] = useState<Product[]>([]);
 	const [banners, setBanners] = useState();
 	const [selectedCategory, setSelectedCategory] = useState(100);
-	const [categories, setCategories] = useState<ProductType[]>([]);
+	const [categories, setCategories] = useState<Product[]>([]);
 
 	const isFirstLoaded = useRef(false);
 
@@ -68,18 +68,7 @@ const MainPage = () => {
 	useEffect(() => {
 		if (!isFirstLoaded.current) {
 			isFirstLoaded.current = true;
-			openModal(Modal, {
-				children: 'ss',
-				// onSubmit: () => {
-				// 	window.console.log('비즈니스 로직 처리');
-				// 	openModal(Modal, {
-				// 		children: 'a',
-				// 		onsubmit: () => {
-				// 			window.console.log('비즈니스 로dd직 처리');
-				// 		},
-				// 	});
-				// },
-			});
+			openModal(HomeModal, {});
 		}
 	}, [openModal, isFirstLoaded]);
 
@@ -89,7 +78,7 @@ const MainPage = () => {
 			<MainSwiper />
 			<Wrapper>
 				{/* 오늘의 추천 상품 */}
-				<ProductList title={'이 상품 어때요?'} products={products} />
+				<ProductList title={'오늘의 추천 상품'} products={products} navigation />
 
 				{/* 프로모션 상품 */}
 				<Promotion promotions={promotions} />
@@ -98,12 +87,16 @@ const MainPage = () => {
 				<Banner banner={banners[0]} />
 
 				{/* 카테고리별 상품 */}
-				<Category setSelectedCategory={setSelectedCategory} />
+				<Category selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
 
-				<ProductList products={selectedProducts} />
+				<ProductList products={selectedProducts} navigation />
 
 				{/* 배너2 */}
 				<Banner banner={banners[3]} />
+
+				<ProductList title={'이 상품 어때요?'} products={products} autoPlay navigation />
+
+				{/* 이 상품 어때요? */}
 			</Wrapper>
 		</div>
 	);
