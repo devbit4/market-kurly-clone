@@ -1,3 +1,6 @@
+import { clsx } from 'clsx';
+import * as uuid from 'uuid';
+
 import styles from './Product.module.css';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -6,17 +9,20 @@ import { Autoplay, Navigation } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import { ProductType } from '@/pages/MainPage';
+import { Product } from '@/pages/MainPage';
 
 import ProductItem from './ProductItem';
 
 type Props = {
-	products: ProductType[];
+	products: Product[];
 	title?: string;
 	subTitle?: string;
+	autoPlay?: boolean;
 };
 
-const ProductList = ({ title, subTitle, products }: Props) => {
+const ProductList = ({ title, subTitle, products, autoPlay }: Props) => {
+	const section = uuid.v4();
+
 	return (
 		<div className={styles.container}>
 			<div className={styles.title}>
@@ -32,7 +38,11 @@ const ProductList = ({ title, subTitle, products }: Props) => {
 				<Swiper
 					slidesPerView={4}
 					modules={[Autoplay, Navigation]}
-					navigation={true}
+					autoplay={autoPlay && { delay: 2500, disableOnInteraction: false }}
+					navigation={{
+						nextEl: '.swiperBtnNext' + section,
+						prevEl: '.swiperBtnPrev' + section,
+					}}
 					className='mySwiper'
 				>
 					{products?.map(product => {
@@ -43,20 +53,12 @@ const ProductList = ({ title, subTitle, products }: Props) => {
 						);
 					})}
 				</Swiper>
+				<button className={clsx('swiperBtnNext' + section, styles.swiperNext)}></button>
+				<button className={clsx('swiperBtnPrev' + section, styles.swiperPrev)}></button>
 			</div>
 
-			<a style={{ display: 'flex', justifyContent: 'center' }}>
-				<button
-					style={{
-						width: '516px',
-						height: '56px',
-						border: '1px solid rgb(227, 227, 227)',
-						marginTop: '30px',
-						backgroundColor: 'transparent',
-					}}
-				>
-					상품 전체 보기
-				</button>
+			<a className={styles.showMoreButton}>
+				<button>상품 전체 보기</button>
 			</a>
 		</div>
 	);

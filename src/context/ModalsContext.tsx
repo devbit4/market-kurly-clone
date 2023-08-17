@@ -25,8 +25,7 @@ export const ModalsStateContext = createContext<Modal[] | []>([]);
 const ModalsProvider = ({ children }: Props) => {
 	const [openedModals, setOpenedModals] = useState<Modal[]>([]);
 
-	window.console.log(openedModals);
-	const open = useCallback((Component: any, props: any) => {
+	const open = useCallback((Component: any, props: any = () => {}) => {
 		const id = uuid.v4();
 
 		setOpenedModals(prev => {
