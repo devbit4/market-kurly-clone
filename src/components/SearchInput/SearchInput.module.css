@@ -1,16 +1,59 @@
 .search {
-	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	width: 400px;
 	height: 48px;
 	padding-left: 14px;
-	border: 1px solid #5f0080;
+	border: 1px solid rgb(95, 0, 128);
 	border-radius: 6px;
-	background-color: #fff;
-	box-shadow: #f7f7f7 0 0;
+	background-color: rgb(255, 255, 255);
+	box-shadow: rgb(247, 247, 247) 0px 0px;
 }
+
+.searchQuery {
+	display: inline-block;
+    overflow: hidden;
+    max-width: 500px;
+    color: rgb(95, 0, 128);
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+
+.searchQuery_left{
+	display: inline-block;
+    overflow: hidden;
+    max-width: 500px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+.searchQuery_right{
+	display: inline-block;
+    overflow: hidden;
+    max-width: 500px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+
+.searchQueryDesc {
+	display: inline-block;
+    overflow: hidden;
+    max-width: 500px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+
 
 .input_search {
 	width: calc(100% - 60px);
@@ -21,18 +64,6 @@
 	background-color: transparent;
 }
 
-.btn_reset {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 16px;
-	height: 16px;
-	right: 47px;
-	margin-left: 20px;
-	background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGNpcmNsZSBmaWxsPSIjOTk5IiBvcGFjaXR5PSIuNSIgY3g9IjgiIGN5PSI4IiByPSI4Ii8+CiAgICAgICAgPGcgc3Ryb2tlPSIjRkZGIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41Ij4KICAgICAgICAgICAgPHBhdGggZD0ibTEwLjg5NyAxMC43ODYtNS43Ny01Ljc2OU01LjEyMiAxMC43ODVsNS43NzUtNS43NzUiLz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo=')
-		0% 0% / 16px 16px no-repeat transparent;
-}
-
 .btn_search {
 	width: 60px;
 	height: 100%;
@@ -40,31 +71,200 @@
 		center center / auto no-repeat;
 }
 
-.search.active {
-	width: 242px;
-	height: 36px;
-	border: none;
-	background-color: rgb(247, 247, 247);
-	box-shadow: #f7f7f7 0 0 0 1px inset;
+.productList{
+	margin-top: 50px;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 35px;
+    letter-spacing: -0.5px;
+    text-align: center;
 }
 
-.search.active .input_search {
-	width: calc(100% - 40px);
-	font-size: 12px;
+.resultText {
+	display: flex;
+	overflow: hidden;
+	max-width: 1000px;
+	color: rgb(95, 0, 128);
+	text-align: center;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin-top: 50px;
+	font-weight: 500;
+	font-size: 50px;
+	line-height: 35px;
+	letter-spacing: -0.3px;
+	text-align: center;
+	display: block;
+	font-size: 1.17em;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	font-weight: bold;
 }
 
-.search.active .btn_reset {
-	right: 35px;
-	top: 20px;
-	background-size: 12px 12px;
+/* 버튼을 감싸는 컨테이너 영역 */
+.buttonContainner{
+	display: flex;
+	margin: 30;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	letter-spacing: -0.3px;
+	height: 50;
 }
 
-.search.active .btn_search {
-	position: relative;
-	height: 30px;
-	margin: 10px -5px 10px 10px;
+/* 총N개 count 영역 */
+.totalCount {
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: -0.3px;
+	font-weight: 500;
+	margin-top: 30;
+	color: rgb(1, 1, 1);
+}
+
+/* 버튼 바영역 */
+.buttonBar {
+	display: flex;
+	margin: 30;
+	display: flex;
+	align-items: center;
+	letter-spacing: -0.3px;
+	height: 50;
+	
+	
+}
+
+/* 추천순 사이 바 */
+.separator{
+    content:"  ";
+    display: flex;
+    width: 1px;
+    height: 10px;
+    margin-right: 8px;
+	margin-left: 8px;
+    background-color: rgb(226, 226, 226);
+}
+
+/* 높은가격순 */
+.highPriceButton {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	letter-spacing: -0.3px;
+    cursor: pointer;
+	color: rgb(193, 189, 189);
+	cursor: pointer;
+}
+/* 낮은가격순 */
+.lowPriceButton {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	letter-spacing: -0.3px;
+    cursor: pointer;
+	color: rgb(193, 189, 189);
+	cursor: pointer;
+}
+
+/* 추천버튼 */
+.recommandButton {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	letter-spacing: -0.3px;
+    cursor: pointer;
+	font-weight: 500;
+	color: rgb(51, 51, 51);
+	cursor: pointer;
+	margin-left: auto; /* This will push the button to the right */
+}
+
+.searchreultContainner{
+	display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 480px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: auto;
+    padding: 100px 0px;
+}
+/* 검색된 상품이 없습니다. 문구 */
+.searchReultNull{
+	font-size: 16px;
+    color: rgb(181, 181, 181);
+    margin-top: 16px;
+}
+
+/* 페이지네이션버튼 */
+.paginationContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 16px;
+}
+.paginationButton.dimmed {
+	background-color: rgba(255, 255, 255, 0.6);
+}
+
+.paginationButton {
+	display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-top: 1px solid rgb(221, 221, 221);
+    border-right: 1px solid rgb(221, 221, 221);
+    border-bottom: 1px solid rgb(221, 221, 221);
+    border-image: initial;
+    border-left: none;
+    cursor: pointer;
+}
+
+.paginationButton:hover {
+	background-color: #ddd;
+	color: rgb(95, 0, 128);
+}
+
+.paginationButton.active {
+	background-color: #333;
+	color: #fff;
+	font-weight: bold;
+}
+
+.searchCategory {
+	position: sticky;
 	top: 0px;
-	width: 40px;
-	background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTI0IDI0SDZWNmgxOHoiLz4KICAgICAgICA8cGF0aCBkPSJNMjIuNSAyMi41aC0xNXYtMTVoMTV6Ii8+CiAgICAgICAgPGcgc3Ryb2tlPSIjMzMzIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNiI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xOC44MjUgMTMuMzUyYzAgMS43MjUtLjc1IDMuMjI1LTEuOTUgNC4yLS45NzUuODI1LTIuMTc1IDEuMjc1LTMuNTI1IDEuMjc1YTUuNDU3IDUuNDU3IDAgMCAxLTUuNDc1LTUuNDc1IDUuNDU3IDUuNDU3IDAgMCAxIDUuNDc1LTUuNDc1YzMtLjA3NSA1LjQ3NSAyLjQgNS40NzUgNS40NzV6TTIxLjM3NSAyMS4zNzVsLTMuNzUtMy43NSIvPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==')
-		0px 0px no-repeat;
+	display: flex;
+	z-index: 20;
+	background-color: rgb(255, 255, 255);
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	align-items: center;
+	padding-bottom: 20px;
+	border-bottom: 1px solid rgb(238, 238, 238);
+	line-height: 20px;
+	margin-left: 100px;
+}
+
+.searchContainer {
+	display: flex;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	align-items: center;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 249px);
+	gap: 31px 18px;
+	width: 100%;
+	/* width: 100%;
+	height: 52px;
+	overflow: hidden; */
 }
