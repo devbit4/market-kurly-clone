@@ -132,7 +132,7 @@ const SearchPage = () => {
 					<div className={styles.productList}>
 						{searchQuery ? (
 							<h2 className={`${styles.resultText} ${styles.searchQueryText}`}>
-								<span>'{searchQuery}'에 대한 입력결과</span>
+								<span>&apos;{searchQuery}&apos;에 대한 입력결과</span>
 							</h2>
 						) : null}
 						{filteredProducts.length === 0 && searchQuery ? (

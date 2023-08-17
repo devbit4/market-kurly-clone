@@ -4,8 +4,10 @@ import FooterInfo from '@components/Footer/FooterInfo';
 
 import { IconEprivacy, IconISMS, IconToss, IconWoori, footerLinks, snsLinks } from './footer-lists';
 import styles from './Footer.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+	const navigate = useNavigate();
 	return (
 		<footer className={styles.footer}>
 			<Wrapper>
@@ -29,6 +31,7 @@ const Footer = () => {
 									className={styles.contact_group}
 									title='1:1문의'
 									description='365일,고객센터 운영시간에 순차적으로 답변드리겠습니다.'
+									onClick={() => navigate('/mypage/inquiry/list')}
 								/>
 							</li>
 							<li>
