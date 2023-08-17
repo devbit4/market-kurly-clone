@@ -12,13 +12,46 @@
 }
 
 .searchQuery {
-	color: #8320ad; /* 보라색으로 지정하거나 원하는 색상으로 변경 */
-	font-size: 24px;
+	display: inline-block;
+    overflow: hidden;
+    max-width: 500px;
+    color: rgb(95, 0, 128);
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+
+.searchQuery_left{
+	display: inline-block;
+    overflow: hidden;
+    max-width: 500px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+.searchQuery_right{
+	display: inline-block;
+    overflow: hidden;
+    max-width: 500px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: top;
 }
 
 .searchQueryDesc {
-	color: #000000; /* 검정색으로 지정하거나 원하는 색상으로 변경 */
-	font-size: 24px;
+	display: inline-block;
+    overflow: hidden;
+    max-width: 500px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: top;
 }
 
 
@@ -38,6 +71,15 @@
 		center center / auto no-repeat;
 }
 
+.productList{
+	margin-top: 50px;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 35px;
+    letter-spacing: -0.5px;
+    text-align: center;
+}
+
 .resultText {
 	display: flex;
 	overflow: hidden;
@@ -49,7 +91,7 @@
 	margin-top: 50px;
 	font-weight: 500;
 	font-size: 50px;
-	line-height: 45px;
+	line-height: 35px;
 	letter-spacing: -0.3px;
 	text-align: center;
 	display: block;
@@ -61,6 +103,18 @@
 	font-weight: bold;
 }
 
+/* 버튼을 감싸는 컨테이너 영역 */
+.buttonContainner{
+	display: flex;
+	margin: 30;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	letter-spacing: -0.3px;
+	height: 50;
+}
+
+/* 총N개 count 영역 */
 .totalCount {
 	font-size: 14px;
 	font-weight: 500;
@@ -70,56 +124,83 @@
 	color: rgb(1, 1, 1);
 }
 
-
+/* 버튼 바영역 */
 .buttonBar {
-	margin-top: 30;
+	display: flex;
+	margin: 30;
 	display: flex;
 	align-items: center;
+	letter-spacing: -0.3px;
+	height: 50;
+	
 	
 }
 
-/* 추천순 */
+/* 추천순 사이 바 */
+.separator{
+    content:"  ";
+    display: flex;
+    width: 1px;
+    height: 10px;
+    margin-right: 8px;
+	margin-left: 8px;
+    background-color: rgb(226, 226, 226);
+}
+
+/* 높은가격순 */
 .highPriceButton {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	letter-spacing: -0.3px;
-	font-weight: 500;
-	color: rgb(51, 51, 51);
-	cursor: default;
-	background-color: transparent;
-	text-decoration: none;
+    cursor: pointer;
+	color: rgb(193, 189, 189);
 	cursor: pointer;
 }
-
+/* 낮은가격순 */
 .lowPriceButton {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	letter-spacing: -0.3px;
-	font-weight: 500;
-	color: rgb(51, 51, 51);
+    cursor: pointer;
+	color: rgb(193, 189, 189);
 	cursor: pointer;
-	background-color: transparent;
-	text-decoration: none;
 }
 
-/* RecommandButton.module.css */
+/* 추천버튼 */
 .recommandButton {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	letter-spacing: -0.3px;
+    cursor: pointer;
 	font-weight: 500;
 	color: rgb(51, 51, 51);
-	cursor: default;
-	background-color: transparent;
-	text-decoration: none;
 	cursor: pointer;
 	margin-left: auto; /* This will push the button to the right */
 }
 
-/* Pagination.module.css */
+.searchreultContainner{
+	display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 480px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: auto;
+    padding: 100px 0px;
+}
+/* 검색된 상품이 없습니다. 문구 */
+.searchReultNull{
+	font-size: 16px;
+    color: rgb(181, 181, 181);
+    margin-top: 16px;
+}
+
+/* 페이지네이션버튼 */
 .paginationContainer {
 	display: flex;
 	justify-content: center;
@@ -127,34 +208,34 @@
 	margin-top: 16px;
 }
 .paginationButton.dimmed {
-	background-color: rgba(247, 247, 247, 0.6);
-	cursor: not-allowed;
+	background-color: rgba(255, 255, 255, 0.6);
 }
 
 .paginationButton {
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 34px;
-	height: 34px;
-	border-top: 1px solid rgb(221, 221, 221);
-	border-right: 1px solid rgb(221, 221, 221);
-	border-bottom: 1px solid rgb(221, 221, 221);
-	border-image: initial;
-	border-left: none;
-	cursor: pointer;
-	background-color: rgb(247, 247, 247);
-	color: rgb(95, 0, 128);
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-top: 1px solid rgb(221, 221, 221);
+    border-right: 1px solid rgb(221, 221, 221);
+    border-bottom: 1px solid rgb(221, 221, 221);
+    border-image: initial;
+    border-left: none;
+    cursor: pointer;
 }
 
 .paginationButton:hover {
 	background-color: #ddd;
-	color: #000;
+	color: rgb(95, 0, 128);
 }
 
 .paginationButton.active {
 	background-color: #333;
 	color: #fff;
+	font-weight: bold;
 }
 
 .searchCategory {
