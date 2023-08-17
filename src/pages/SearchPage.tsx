@@ -1,7 +1,7 @@
 // 필요한 모듈과 컴포넌트 import
 import { useEffect, useState, useMemo } from 'react';
 import axios from 'axios';
-import SearchInput from '@/components/SearchInput/SearchInput';
+// import SearchInput from '@/components/SearchInput/SearchInput';
 import Wrapper from '@/components/Wrapper/Wrapper';
 import ProductList from '@/components/Product/ProductList';
 import Pagination from '@/components/SearchInput/Pagination';
@@ -121,7 +121,7 @@ const SearchPage = () => {
 		<div className={styles.container}>
 			<Wrapper>
 				<div className={styles.searchsection}>
-					<SearchInput onSearch={handleConfirmSearch} />
+					{/* <SearchInput onSearch={handleConfirmSearch} /> */}
 
 					<span className={styles.totalCount}>총{filteredProducts.length}건</span>
 					<div className={styles.buttonBar}>

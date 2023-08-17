@@ -18,9 +18,10 @@ type Props = {
 	title?: string;
 	subTitle?: string;
 	autoPlay?: boolean;
+	navigation?: boolean;
 };
 
-const ProductList = ({ title, subTitle, products, autoPlay }: Props) => {
+const ProductList = ({ title, subTitle, products, autoPlay, navigation }: Props) => {
 	const section = uuid.v4();
 
 	return (
@@ -39,10 +40,12 @@ const ProductList = ({ title, subTitle, products, autoPlay }: Props) => {
 					slidesPerView={4}
 					modules={[Autoplay, Navigation]}
 					autoplay={autoPlay && { delay: 2500, disableOnInteraction: false }}
-					navigation={{
-						nextEl: '.swiperBtnNext' + section,
-						prevEl: '.swiperBtnPrev' + section,
-					}}
+					navigation={
+						navigation && {
+							nextEl: '.swiperBtnNext' + section,
+							prevEl: '.swiperBtnPrev' + section,
+						}
+					}
 					className='mySwiper'
 				>
 					{products?.map(product => {
@@ -53,8 +56,12 @@ const ProductList = ({ title, subTitle, products, autoPlay }: Props) => {
 						);
 					})}
 				</Swiper>
-				<button className={clsx('swiperBtnNext' + section, styles.swiperNext)}></button>
-				<button className={clsx('swiperBtnPrev' + section, styles.swiperPrev)}></button>
+				{navigation && (
+					<>
+						<button className={clsx('swiperBtnNext' + section, styles.swiperNext)}></button>
+						<button className={clsx('swiperBtnPrev' + section, styles.swiperPrev)}></button>
+					</>
+				)}
 			</div>
 
 			<a className={styles.showMoreButton}>
