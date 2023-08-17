@@ -78,7 +78,7 @@ const MainPage = () => {
 			<MainSwiper />
 			<Wrapper>
 				{/* 오늘의 추천 상품 */}
-				<ProductList title={'오늘의 추천 상품'} products={products} />
+				<ProductList title={'오늘의 추천 상품'} products={products} navigation />
 
 				{/* 프로모션 상품 */}
 				<Promotion promotions={promotions} />
@@ -89,12 +89,12 @@ const MainPage = () => {
 				{/* 카테고리별 상품 */}
 				<Category selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
 
-				<ProductList products={selectedProducts} />
+				<ProductList products={selectedProducts} navigation />
 
 				{/* 배너2 */}
 				<Banner banner={banners[3]} />
 
-				<ProductList title={'이 상품 어때요?'} products={products} autoPlay />
+				<ProductList title={'이 상품 어때요?'} products={products} autoPlay navigation />
 
 				{/* 이 상품 어때요? */}
 			</Wrapper>

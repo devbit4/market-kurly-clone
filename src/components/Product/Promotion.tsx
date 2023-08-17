@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import moment from 'moment';
+import * as moment from 'moment';
 import { clsx } from 'clsx';
 
 import styles from './Product.module.css';
@@ -17,9 +17,9 @@ const Promotion = ({ promotions }: Props) => {
 
 	const [currrentTiem, setCurrentTime] = useState(moment());
 
-	const hour = String(moment.duration(targetTime.diff(currrentTiem)).hours()).padStart(2, 0);
-	const minute = String(moment.duration(targetTime.diff(currrentTiem)).minutes()).padStart(2, 0);
-	const second = String(moment.duration(targetTime.diff(currrentTiem)).seconds()).padStart(2, 0);
+	const hour = String(moment.duration(targetTime.diff(currrentTiem)).hours()).padStart(2, '0');
+	const minute = String(moment.duration(targetTime.diff(currrentTiem)).minutes()).padStart(2, '0');
+	const second = String(moment.duration(targetTime.diff(currrentTiem)).seconds()).padStart(2, '0');
 
 	useEffect(() => {
 		const timer = setInterval(() => {
