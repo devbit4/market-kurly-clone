@@ -58,11 +58,15 @@ const ProductGroup = ({
 						/>
 						{product.discounted_price && product.discounted_price < product.sales_price ? (
 							<div className={`${styles.price} ${styles.price_sale}`}>
-								<strong>{convertNumberFormat(product.discounted_price)}원</strong>
-								<span>{convertNumberFormat(product.sales_price)}원</span>
+								<strong>
+									{convertNumberFormat(product.discounted_price * product.quantity)}원
+								</strong>
+								<span>{convertNumberFormat(product.sales_price * product.quantity)}원</span>
 							</div>
 						) : (
-							<strong className={styles.price}>{convertNumberFormat(product.sales_price)}원</strong>
+							<strong className={styles.price}>
+								{convertNumberFormat(product.sales_price * product.quantity)}원
+							</strong>
 						)}
 						<button type='button' className={styles.btn_delete}>
 							<span className='sr_only'>삭제하기</span>
