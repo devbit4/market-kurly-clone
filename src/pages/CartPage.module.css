@@ -9,6 +9,7 @@
 .contents {
 	display: flex;
 	justify-content: space-between;
+	width: 100%;
 }
 
 .notice {
@@ -23,4 +24,8 @@
 	font-size: 12px;
 	line-height: 16px;
 	word-break: keep-all;
+}
+
+.price_summary {
+	width: 284px;
 }

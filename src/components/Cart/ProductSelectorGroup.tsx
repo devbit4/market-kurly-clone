@@ -1,15 +1,13 @@
-import { useState } from 'react';
 import Checkbox from '@components/Checkbox/Checkbox';
 
 import styles from './ProductSelectorGroup.module.css';
 
-const ProductSelectorGroup = () => {
-	const [isAllChecked, setIsAllChecked] = useState(false);
+interface ProductSelectorGroup {
+	isAllChecked: boolean;
+	handleCheckbox: () => void;
+}
 
-	const handleCheckbox = () => {
-		setIsAllChecked(prevIsAllChecked => !prevIsAllChecked);
-	};
-
+const ProductSelectorGroup = ({ isAllChecked, handleCheckbox }: ProductSelectorGroup) => {
 	return (
 		<div className={styles.selector_group}>
 			<Checkbox isChecked={isAllChecked} onChnage={handleCheckbox}>

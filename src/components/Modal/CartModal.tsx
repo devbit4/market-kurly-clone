@@ -1,12 +1,13 @@
 import { useCallback, useRef, useState } from 'react';
 
+import useOutSideClick from '@/hooks/useOutsideClick';
 import ModalContainer from '@components/Modal/ModalContainer';
 import Counter from '@components/Counter/Counter';
-import useOutSideClick from '@/hooks/useOutsideClick';
 import { Product } from '@/pages/MainPage';
+import { convertNumberFormat } from '@/utils/convertNumberFormat';
+import { CartItems } from '@/types/CartProduct';
 
 import styles from './CartModal.module.css';
-import { convertNumberFormat } from '@/utils/convertNumberFormat';
 
 type Props = {
 	children: React.ReactNode;
@@ -14,11 +15,6 @@ type Props = {
 	product: Product;
 	onClose: (id: string) => void;
 };
-
-interface CartItems {
-	dealProductNo: number;
-	quantity: number;
-}
 
 const CartModal = ({ onClose, id, product }: Props) => {
 	const [quantity, setQuantity] = useState(0);
