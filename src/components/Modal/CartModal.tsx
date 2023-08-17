@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useRef, useState, useContext } from 'react';
 
 import useOutSideClick from '@/hooks/useOutsideClick';
 import ModalContainer from '@components/Modal/ModalContainer';
@@ -8,6 +8,7 @@ import { convertNumberFormat } from '@/utils/convertNumberFormat';
 import { CartItems } from '@/types/CartProduct';
 
 import styles from './CartModal.module.css';
+import { CartItemContext } from '@/context/CartItemsContext';
 
 type Props = {
 	children: React.ReactNode;
@@ -18,6 +19,7 @@ type Props = {
 
 const CartModal = ({ onClose, id, product }: Props) => {
 	const [quantity, setQuantity] = useState(0);
+	const { updateCartItem } = useContext(CartItemContext);
 	const modalRef = useRef(null);
 	const price = product.discounted_price ?? product.sales_price;
 	const totalPrice = price * quantity;
@@ -42,6 +44,7 @@ const CartModal = ({ onClose, id, product }: Props) => {
 		}
 
 		window.localStorage.setItem('cartItems', JSON.stringify(cartItems));
+		updateCartItem(cartItems.length);
 		onClose(id);
 	};
 

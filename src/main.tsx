@@ -11,6 +11,7 @@ import ModalsProvider from './context/ModalsContext';
 
 import './global.css';
 import CartPage from './pages/CartPage';
+import CartItemProvider from './context/CartItemsContext';
 
 const router = createBrowserRouter([
 	{
@@ -42,7 +43,9 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-	<ModalsProvider>
-		<RouterProvider router={router} />
-	</ModalsProvider>
+	<CartItemProvider>
+		<ModalsProvider>
+			<RouterProvider router={router} />
+		</ModalsProvider>
+	</CartItemProvider>
 );

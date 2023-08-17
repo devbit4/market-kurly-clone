@@ -208,7 +208,7 @@
 		50% 50% no-repeat;
 }
 
-.btn_cart button {
+.btn_cart a {
 	position: relative;
 }
 
