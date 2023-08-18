@@ -5,6 +5,7 @@ import styles from '@components/SearchInput/SearchInput.module.css';
 type HighPriceSortButtonProps = {
 	onClick: () => void;
 	children: React.ReactNode;
+	className?: string; // className 속성 추가
 };
 
 const HighPriceSortButton: React.FC<HighPriceSortButtonProps> = ({ onClick, children }) => {
