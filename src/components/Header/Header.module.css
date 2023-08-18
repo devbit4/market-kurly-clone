@@ -359,6 +359,7 @@
 /* HEADER - SCROLL */
 .header.active {
 	position: fixed;
+	top: 0;
 }
 
 .header.active .markets,
