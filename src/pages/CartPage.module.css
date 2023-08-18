@@ -1,0 +1,31 @@
+.title {
+	padding: 50px 0 48px;
+	font-weight: 500;
+	font-size: 28px;
+	line-height: 35px;
+	text-align: center;
+}
+
+.contents {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.notice {
+	padding: 16px 0;
+}
+
+.notice li {
+	position: relative;
+	padding-left: 7px;
+	padding-top: 4px;
+	color: #666;
+	font-size: 12px;
+	line-height: 16px;
+	word-break: keep-all;
+}
+
+.price_summary {
+	width: 284px;
+}

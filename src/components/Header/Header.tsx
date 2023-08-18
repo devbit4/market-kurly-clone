@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 import Wrapper from '@components/Wrapper/Wrapper';
@@ -9,10 +9,13 @@ import HeaderCategories from '@components/Header/HeaderCategories';
 
 import { mainRoutes, themeRoutes, userRoutes } from './header-routes';
 import styles from './Header.module.css';
+import { CartItemContext } from '@/context/CartItemsContext';
 
 const Header = () => {
 	const navigate = useNavigate();
 	const [isScrolledDown, setIsScrolledDown] = useState(false);
+	const [cartItemLength, setCartItemLength] = useState(0);
+	const { value } = useContext(CartItemContext);
 
 	useEffect(() => {
 		const handleHeaderStyle = () => {
@@ -30,11 +33,13 @@ const Header = () => {
 		return () => window.removeEventListener('scroll', handleHeaderStyle);
 	}, [isScrolledDown]);
 
+	useEffect(() => {
+		setCartItemLength(value);
+	}, [value]);
+
 	const handleFavoriteBtn = () => {
 		navigate('/mypage/pick/list');
 	};
-
-	const handleCartBtn = () => {};
 
 	return (
 		<header className={`${styles.header} ${isScrolledDown ? styles.active : ''}`}>
@@ -84,10 +89,10 @@ const Header = () => {
 								</button>
 							</li>
 							<li className={styles.btn_cart}>
-								<button type='button' onClick={handleCartBtn}>
-									<span className={styles.badge}>0</span>
+								<Link to='/cart'>
+									<span className={styles.badge}>{cartItemLength}</span>
 									<HeaderIcon name='장바구니목록' className={styles.ico_cart} />
-								</button>
+								</Link>
 							</li>
 						</ul>
 					</div>

@@ -1,12 +1,14 @@
+import { useCallback, useRef, useState, useContext } from 'react';
+
 import useOutSideClick from '@/hooks/useOutsideClick';
-
-import { useCallback, useRef } from 'react';
-
-import ModalContainer from './ModalContainer';
+import ModalContainer from '@components/Modal/ModalContainer';
+import Counter from '@components/Counter/Counter';
+import { Product } from '@/pages/MainPage';
+import { convertNumberFormat } from '@/utils/convertNumberFormat';
+import { CartItems } from '@/types/CartProduct';
 
 import styles from './CartModal.module.css';
-
-import { Product } from '@/pages/MainPage';
+import { CartItemContext } from '@/context/CartItemsContext';
 
 type Props = {
 	children: React.ReactNode;
@@ -16,13 +18,35 @@ type Props = {
 };
 
 const CartModal = ({ onClose, id, product }: Props) => {
+	const [quantity, setQuantity] = useState(0);
+	const { updateCartItem } = useContext(CartItemContext);
 	const modalRef = useRef(null);
+	const price = product.discounted_price ?? product.sales_price;
+	const totalPrice = price * quantity;
 
-	window.console.log(product);
+	const increaseQuantity = () => setQuantity(prevQ => prevQ + 1);
+	const decreaseQuantity = () => setQuantity(prevQ => prevQ - 1);
 
 	const handleClose = useCallback(() => {
 		onClose && onClose(id);
 	}, [onClose, id]);
+
+	const handleAddButton = () => {
+		let cartItems: CartItems[] = JSON.parse(window.localStorage.getItem('cartItems') ?? '[]');
+		const productIndexInCart = cartItems.findIndex(
+			cartItem => cartItem.dealProductNo === product.no
+		);
+
+		if (productIndexInCart >= 0) {
+			cartItems[productIndexInCart].quantity += quantity;
+		} else {
+			cartItems = [...cartItems, { dealProductNo: product.no, quantity: quantity }];
+		}
+
+		window.localStorage.setItem('cartItems', JSON.stringify(cartItems));
+		updateCartItem(cartItems.length);
+		onClose(id);
+	};
 
 	useOutSideClick(modalRef, handleClose);
 
@@ -37,21 +61,22 @@ const CartModal = ({ onClose, id, product }: Props) => {
 							</div>
 							<div className={styles.cartInfo}>
 								<div className={styles.productPrice}>
-									<span>{product.discounted_price}원</span>
-									<span>{product.sales_price}원</span>
+									<span>{convertNumberFormat(product.discounted_price)}원</span>
+									<span>{convertNumberFormat(product.sales_price)}원</span>
 								</div>
-								{/* <div className={styles.productQuantity}>
-								<button></button>
-								<div>1</div>
-								<button></button>
-							</div> */}
+								<Counter
+									className={styles.counter}
+									quantity={quantity}
+									increateQuantity={increaseQuantity}
+									decreaseQuantity={decreaseQuantity}
+								/>
 							</div>
 						</div>
 						<div className={styles.cartPrice}>
 							<div className={styles.cartPriceDetail}>
 								<p>합계</p>
 								<div>
-									<span>0</span>
+									<span>{convertNumberFormat(totalPrice)}</span>
 									<span>원</span>
 								</div>
 							</div>
@@ -64,7 +89,9 @@ const CartModal = ({ onClose, id, product }: Props) => {
 							<button className={styles.cancelButton} onClick={handleClose}>
 								취소
 							</button>
-							<button className={styles.addButton}>장바구니 담기</button>
+							<button className={styles.addButton} onClick={handleAddButton}>
+								장바구니 담기
+							</button>
 						</div>
 					</div>
 				</div>
