@@ -1,7 +1,8 @@
 // 필요한 모듈과 컴포넌트 import
 import { useEffect, useState, useMemo } from 'react';
+import { useSearchParams } from 'react-router-dom';
+
 import axios from 'axios';
-// import SearchInput from '@/components/SearchInput/SearchInput';
 import Wrapper from '@/components/Wrapper/Wrapper';
 import ProductList from '@/components/Product/ProductList';
 import Pagination from '@/components/SearchInput/Pagination';
@@ -36,12 +37,13 @@ const SearchPage = () => {
 	const [banners, setBanners] = useState();
 	const [selectedCategory] = useState(100);
 	const [categories, setCategories] = useState<ProductType[]>([]);
-	const [searchQuery, setSearchQuery] = useState('');
 	const [filteredProducts, setFilteredProducts] = useState<ProductType[]>([]);
 	const [, setHighSortType] = useState<'default' | 'highToLow'>('default');
 	const [, setLowSortType] = useState<'default' | 'lowToHigh'>('default');
 	const [currentPage, setCurrentPage] = useState(1);
 
+	// SearchInput에 있는 쿼리값을 가져옴
+	const [searchParams] = useSearchParams();
 	// 선택된 카테고리에 해당하는 상품을 필터링하여 가져오는 함수를 선언
 	const selectedProducts = useMemo(() => {
 		return categories?.filter(item => item.category === selectedCategory);
@@ -62,27 +64,17 @@ const SearchPage = () => {
 
 	// 검색어에 따라 상품을 필터링하여 보여주는 효과를 정의
 	useEffect(() => {
-		if (searchQuery) {
+    
+		const sword = searchParams.get('sword');
+		if (sword) {
 			const filtered = selectedProducts?.filter(item =>
-				item.name.toLowerCase().includes(searchQuery.toLowerCase())
+				item.name.toLowerCase().includes(sword.toLowerCase())
 			);
 			setFilteredProducts(filtered || []);
 		} else {
 			setFilteredProducts(selectedProducts || []);
 		}
-	}, [selectedProducts, searchQuery]);
-
-	// // 검색 기능을 위한 함수
-	const handleConfirmSearch = (query: string) => {
-		setSearchQuery(query); // 검색 쿼리 업데이트
-	};
-
-	// 검색 데이터 가져오기
-	useEffect(() => {
-		if (searchQuery) {
-			handleConfirmSearch(searchQuery);
-		}
-	}, [searchQuery]);
+	}, [selectedProducts, searchParams]);
 
 	// '높은가격순' 버튼 클릭 시 상품을 높은 가격순으로 정렬하는 함수를 정의
 	const handleSortHighToLow = () => {
@@ -120,36 +112,49 @@ const SearchPage = () => {
 	return (
 		<div className={styles.container}>
 			<Wrapper>
-				<div className={styles.searchsection}>
-					{/* <SearchInput onSearch={handleConfirmSearch} /> */}
 
-					<span className={styles.totalCount}>총{filteredProducts.length}건</span>
-					<div className={styles.buttonBar}>
-						<SortButton onClick={handleSortByReview}>추천순 </SortButton>
-						<HighPriceSortButton onClick={handleSortHighToLow}>| 높은가격순 |</HighPriceSortButton>
-						<LowPriceSortButton onClick={handleSortLowToHigh}>낮은가격순</LowPriceSortButton>
-					</div>
-					<div className={styles.productList}>
-						{searchQuery ? (
-							<h2 className={`${styles.resultText} ${styles.searchQueryText}`}>
-								<span>&apos;{searchQuery}&apos;에 대한 입력결과</span>
-							</h2>
-						) : null}
-						{filteredProducts.length === 0 && searchQuery ? (
-							<p>검색결과가 없습니다.</p>
-						) : (
-							<>{<ProductList products={currentItems} />}</>
-						)}
-					</div>
-				</div>
-				<div className={styles.paginationCenter}>
-					<Pagination
-						currentPage={currentPage}
-						totalPages={totalPages}
-						onPageChange={handlePageChange}
-						buttonClassName={styles.paginationButton}
-						activeButtonClassName={styles.active}
-					/>
+				<div className={styles.productList}>
+					{searchParams.get('sword') ? (
+						<div className={`${styles.resultText} ${styles.searchQueryText}`}>
+							<span className={styles.searchQuery_left}>{'\''}</span>
+							<span className={styles.searchQuery}>{searchParams.get('sword')}</span>
+							<span className={styles.searchQuery_right}>{'\''}</span>
+							<span className={styles.searchQueryDesc}>에 대한 입력결과</span>
+						</div>
+					) : null}
+
+					{filteredProducts.length === 0 && searchParams.get('sword') ? (
+						<><div className={styles.searchreultContainner}>
+							<div className={styles.searchReultNull}>검색된 상품이 없습니다.</div></div></>
+					) : (
+						<>
+							<div className={styles.searchsection}>
+								<div className={styles.buttonBar}>
+									<span className={styles.totalCount}>총
+										<span className={styles.count}>{filteredProducts.length}
+										</span>건
+									</span>
+									{/* 버튼들 */}
+									<SortButton onClick={handleSortByReview}>추천순 </SortButton>
+									<span className={styles.separator}></span>							
+									<HighPriceSortButton onClick={handleSortHighToLow}>높은가격순</HighPriceSortButton>
+									<span className={styles.separator}></span>								
+									<LowPriceSortButton onClick={handleSortLowToHigh}>낮은가격순</LowPriceSortButton>
+								</div>
+							</div>
+							{<ProductList products={currentItems} />}
+							<div className={styles.paginationCenter}>
+								<Pagination
+									currentPage={currentPage}
+									totalPages={totalPages}
+									onPageChange={handlePageChange}
+									buttonClassName={styles.paginationButton}
+									activeButtonClassName={styles.active}
+								/>
+							</div>
+						</>
+					)}
+
 				</div>
 			</Wrapper>
 		</div>
