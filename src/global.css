@@ -31,6 +31,10 @@ body {
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
+main {
+	min-height: 1050px;
+}
+
 .sr_only {
 	position: absolute;
 	width: 1px;

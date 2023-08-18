@@ -1,0 +1,21 @@
+.button {
+	display: block;
+	text-align: center;
+	width: 100%;
+	height: 56px;
+	border-radius: 3px;
+	border: none;
+	font-weight: 500;
+}
+
+.button a {
+	display: inline-flex;
+	align-items: center;
+	height: 100%;
+	padding: 0 10px;
+}
+
+.primary {
+	color: #fff;
+	background-color: #5f0080;
+}

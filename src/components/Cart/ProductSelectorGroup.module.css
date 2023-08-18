@@ -1,0 +1,18 @@
+.selector_group {
+	display: flex;
+	align-items: center;
+	padding: 18px 10px 16px 2px;
+	font-size: 14px;
+	line-height: 26px;
+	font-weight: 500;
+}
+
+.btn_delete::before {
+	display: inline-block;
+	width: 1px;
+	height: 14px;
+	background: #ddd;
+	margin: 6px 21px 0 22px;
+	vertical-align: top;
+	content: '';
+}
