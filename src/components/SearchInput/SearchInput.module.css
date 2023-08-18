@@ -147,6 +147,13 @@
     background-color: rgb(226, 226, 226);
 }
 
+/* 버튼이 클릭된 경우의 스타일 */
+.clickedButton.recommandButton.active {
+	color: #030303; /* 원하는 폰트 색상으로 변경 */
+	font-weight: bold; /* 필요한 경우 폰트 굵기 설정 */
+	/* 추가적인 스타일 설정을 여기에 추가할 수 있습니다 */
+  }
+
 /* 높은가격순 */
 .highPriceButton {
 	display: flex;
@@ -155,7 +162,6 @@
 	letter-spacing: -0.3px;
     cursor: pointer;
 	color: rgb(193, 189, 189);
-	cursor: pointer;
 }
 /* 낮은가격순 */
 .lowPriceButton {
@@ -165,7 +171,6 @@
 	letter-spacing: -0.3px;
     cursor: pointer;
 	color: rgb(193, 189, 189);
-	cursor: pointer;
 }
 
 /* 추천버튼 */
@@ -177,9 +182,42 @@
     cursor: pointer;
 	font-weight: 500;
 	color: rgb(51, 51, 51);
-	cursor: pointer;
 	margin-left: auto; /* This will push the button to the right */
 }
+
+
+/* 추천순 툴팁영역 */
+.RecoToolTip {
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding-left: 1px;
+  }
+  
+  .TooltipText {
+	position: absolute;
+	top: 100%;
+	left: 30%;
+	transform: translateX(-50%);
+	background-color: #fcfbfb;
+	color: #333131;
+	border: 0.1px solid #161616;
+	padding: 10px 8px 10px 8px;
+	border-radius: 3px;
+	font-size: 12px;
+	z-index: 1;
+	visibility: hidden;
+	opacity: 0;
+	white-space: nowrap; /* 한 줄로 표시 */
+	display: inline-block; /* 가로로 출력 */
+	text-align: left; /* 좌측 정렬 추가 */
+	transition: opacity 0.3s, visibility 0.3s;
+  }
+  
+  .RecoToolTip:hover .TooltipText {
+	visibility: visible;
+	opacity: 1;
+  }
 
 .searchreultContainner{
 	display: flex;

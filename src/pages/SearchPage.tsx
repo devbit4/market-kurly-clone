@@ -10,6 +10,8 @@ import SortButton from '@/components/SearchInput/RecommandButton';
 import HighPriceSortButton from '@components/SearchInput/HighPriceSortButton';
 import styles from '@components/SearchInput/SearchInput.module.css';
 import LowPriceSortButton from '@/components/SearchInput/LowPriceSortButton';
+import SearchNull from '@assets/images/search_null.svg';
+import RecoToolTip from '@assets/images/recommandButtonToolTip.svg'
 
 // 상품 타입을 정의
 type ProductType = {
@@ -38,8 +40,8 @@ const SearchPage = () => {
 	const [selectedCategory] = useState(100);
 	const [categories, setCategories] = useState<ProductType[]>([]);
 	const [filteredProducts, setFilteredProducts] = useState<ProductType[]>([]);
-	const [, setHighSortType] = useState<'default' | 'highToLow'>('default');
-	const [, setLowSortType] = useState<'default' | 'lowToHigh'>('default');
+	const [highSortType, setHighSortType] = useState<'default' | 'highToLow'>('default');
+	const [lowSortType, setLowSortType] = useState<'default' | 'lowToHigh'>('default');
 	const [currentPage, setCurrentPage] = useState(1);
 
 	// SearchInput에 있는 쿼리값을 가져옴
@@ -64,7 +66,7 @@ const SearchPage = () => {
 
 	// 검색어에 따라 상품을 필터링하여 보여주는 효과를 정의
 	useEffect(() => {
-    
+
 		const sword = searchParams.get('sword');
 		if (sword) {
 			const filtered = selectedProducts?.filter(item =>
@@ -79,6 +81,7 @@ const SearchPage = () => {
 	// '높은가격순' 버튼 클릭 시 상품을 높은 가격순으로 정렬하는 함수를 정의
 	const handleSortHighToLow = () => {
 		setHighSortType('highToLow');
+		setLowSortType('default'); // 다른 버튼 클릭 상태 초기화
 		const sorted = [...filteredProducts].sort((a, b) => b.sales_price - a.sales_price);
 		setFilteredProducts(sorted);
 	};
@@ -86,6 +89,7 @@ const SearchPage = () => {
 	// '낮은가격순' 버튼 클릭 시 상품을 낮은 가격순으로 정렬하는 함수를 정의
 	const handleSortLowToHigh = () => {
 		setLowSortType('lowToHigh');
+		setHighSortType('default'); // 다른 버튼 클릭 상태 초기화
 		const sorted = [...filteredProducts].sort((a, b) => a.sales_price - b.sales_price);
 		setFilteredProducts(sorted);
 	};
@@ -125,7 +129,9 @@ const SearchPage = () => {
 
 					{filteredProducts.length === 0 && searchParams.get('sword') ? (
 						<><div className={styles.searchreultContainner}>
-							<div className={styles.searchReultNull}>검색된 상품이 없습니다.</div></div></>
+							<img src={SearchNull} alt="No_Results" className={styles.noResultsImage} />
+							<div className={styles.searchReultNull}>검색된 상품이 없습니다.</div>
+						</div></>
 					) : (
 						<>
 							<div className={styles.searchsection}>
@@ -134,12 +140,36 @@ const SearchPage = () => {
 										<span className={styles.count}>{filteredProducts.length}
 										</span>건
 									</span>
-									{/* 버튼들 */}
-									<SortButton onClick={handleSortByReview}>추천순 </SortButton>
-									<span className={styles.separator}></span>							
-									<HighPriceSortButton onClick={handleSortHighToLow}>높은가격순</HighPriceSortButton>
-									<span className={styles.separator}></span>								
-									<LowPriceSortButton onClick={handleSortLowToHigh}>낮은가격순</LowPriceSortButton>
+									{/* 추천순 버튼 */}
+									<SortButton
+										onClick={handleSortByReview}
+										className={highSortType === 'default' ? '' : styles.clickedButton} // 버튼 클릭 상태에 따라 스타일 설정
+									>
+										추천순
+										<div className={styles.RecoToolTip}>
+											<img src={RecoToolTip} alt="Reco_ToolTip" className={styles.RecoToolTip} />
+											<p className={styles.TooltipText}>
+												<p>검색어 적합성과 소비자 인기도(판매량,판매금액,</p>
+												<p>조회수 등)을 종합적으로 고려한 순서입니다.</p>
+											</p>
+										</div>
+									</SortButton>
+									<span className={styles.separator}></span>
+									{/* 높은가격순 버튼 */}
+									<HighPriceSortButton
+										onClick={handleSortHighToLow}
+										className={highSortType === 'highToLow' ? styles.clickedButton : ''} // 버튼 클릭 상태에 따라 스타일 설정
+									>
+										높은가격순
+									</HighPriceSortButton>
+									<span className={styles.separator}></span>
+									{/* 낮은가격순 버튼 */}
+									<LowPriceSortButton
+										onClick={handleSortLowToHigh}
+										className={lowSortType === 'lowToHigh' ? styles.clickedButton : ''} // 버튼 클릭 상태에 따라 스타일 설정
+									>
+										낮은가격순
+									</LowPriceSortButton>
 								</div>
 							</div>
 							{<ProductList products={currentItems} />}
